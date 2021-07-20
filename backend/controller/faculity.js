@@ -11,3 +11,14 @@ exports.addFaculity = async (req, res, next) => {
       })
     })
 }
+
+exports.getListNameFaculities = (req, res, next) => {
+
+  Faculity.find().select('name')
+    .then((documents) => {
+      res.status(200).json(documents);
+    })
+    .catch(error => {
+      res.status(500).json(error)
+    })
+}
