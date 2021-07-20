@@ -1,0 +1,41 @@
+.manage-table--row {
+    display: flex;
+    justify-content: space-around;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+}
+
+.manage-table--row > div {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;    
+    align-self: center;
+}
+
+.manage-table--row > div:nth-child(1) {
+    width: 110px;
+    color: #00AA50;
+    cursor: pointer;
+}
+
+.manage-table--row > div:nth-child(2) {
+    width: 75px;
+}
+
+.manage-table--row > div:nth-child(3) {
+    width: 200px;
+}
+
+.manage-table--row > div:nth-child(4) {
+    width: 135px;
+}
+
+.manage-table--row > div:nth-child(5) {
+    width: 200px;
+}
+
+
+

@@ -1,0 +1,46 @@
+
+.body{
+  background-color: rgb(246,247,248);
+  width: 100% !important;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.locationSelect{
+  background-color: #E5E5E5;
+}
+mat-grid-tile{
+  margin-bottom: 3px ;
+  margin-left: 5px ;
+  margin-right: 2px ;
+}
+
+mat-label.title{
+  width: 200px !important;
+  line-height: 25px;
+}
+mat-form-field{
+  margin: 10px;
+  width: 21%;
+  background-color: #ffffff;
+}
+.location-received{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location-delivery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  width: 116px;
+  margin: 10px;
+}
+.locationSelect
+{
+  margin-top: 32px;
+  margin-left:5px;
+  margin-right:-5px;
+}

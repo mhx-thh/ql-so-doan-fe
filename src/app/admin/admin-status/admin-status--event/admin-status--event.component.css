@@ -1,0 +1,13 @@
+.status-event {
+    display: flex;
+    height: 40px;
+    background: #FFFFFF;
+    border: 0.5px solid #999999;
+    box-sizing: border-box;
+    line-height: 38px;
+    padding-left: 15px;
+}
+
+.event-time {
+    margin-right: 15px;
+}

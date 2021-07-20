@@ -1,0 +1,97 @@
+main {
+  width: 95%;
+  display: flex;
+  margin: 0 2.5%;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+.booking-logo {
+  width: 40%;
+}
+.booking-logo img {
+  margin-top: 30%;
+  margin-left: 10%;
+  width: 400px;
+  height: 71.29px;
+  text-align: center;
+  display: inline-block;
+}
+.booking-content {
+  padding-left: 20px;
+  width: 60%;
+  border-left:solid #D4E2E7 1px ;
+  margin-right: 20px;
+}
+.booking-content-title{
+margin-top: 10%;
+width: 209px;
+height: 26px;
+font-weight: 300;
+font-size: 36px;
+line-height: 26px;
+color: #000000;
+}
+ul{
+  list-style: none;
+  padding-left: 0px;
+}
+i{
+  font-size: 16px;
+  color:#F7A647;
+  margin: 15px 2px;
+}
+.booking-content-price{
+width: 100%;
+height: 70px;
+font-weight: 500;
+font-size: 48px;
+line-height: 70px;
+color: #000000;
+background-color:#F6F7F8;
+margin-right: 10px;
+}
+.booking-content-table{
+  display: flex;
+}
+.booking-table-label{
+  width: 40%;
+}
+.booking-table-value{
+  width: 60%;
+}
+.booking-table-label{
+  font-size: 24px;
+}
+.row1{
+  line-height: 50px ;
+  height: 50px ;
+  vertical-align: middle !important;
+  margin: 10px auto;
+}
+.row2{
+  line-height: 50px ;
+  height: 50px ;
+  vertical-align: middle !important;
+  margin: 10px auto;
+  margin-bottom: 35%;
+}
+.X{
+  line-height: 25px ;
+  height: 25px ;
+  vertical-align: middle !important;
+  font-size: 26px;
+  font-weight: 300;
+  margin: 10px 10px;
+}
+.size-value{
+  display: flex;
+}
+::-webkit-input-placeholder { text-align:right; }
+input:-moz-placeholder { text-align:right; }
+.deli-address-value{
+  margin-bottom: 3%;
+}
+.recei-address-value{
+  margin-bottom: 3%;
+}

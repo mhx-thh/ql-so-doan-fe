@@ -1,0 +1,45 @@
+.header-logo {
+  margin-left: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.login a {
+  color: #00aa50;
+  margin: 0 60px 0 22px;
+}
+
+ul {
+  display: flex;
+}
+
+#logo1{
+  max-width: 4%;
+  height: auto;
+}
+
+#logo2{
+  margin-left: 2rem;
+  max-width: 5%;
+  height: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  #logo1 {
+    max-width: 18%;
+  }
+  #logo2 {
+    max-width: 20%;
+  }
+  .header-logo{
+    margin-left: 0px;
+  }
+  .login a{
+    margin: 0px 0px 0px 0px;
+  }
+  .header-logo{
+    max-width: 100%;
+  }
+}

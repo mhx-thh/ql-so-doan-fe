@@ -1,0 +1,72 @@
+.statistic-title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+.statistic-table {
+    
+}
+
+.statistic-table--title {
+    display: flex;
+    height: 90px;
+    justify-content: space-around;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+}
+
+.statistic-table--title > div {
+    font-size: 18px;
+    align-self: center;
+    line-height: 21px;
+    color: #666666;
+}
+
+.title-date {
+    width: 150px;
+}
+
+.title-count {
+    width: 60px;
+}   
+
+.title-rate {
+    width: 130px;
+}
+
+.title-earn {
+    width: 130px;
+}
+
+.statistic-page {
+    display: flex;
+    margin: 100px 0;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 20px;
+    color: #666;
+}
+
+.statistic-page > div {
+    height: 26px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.page-selected {
+    background-color: #00AA50;
+    color: #fff;
+}
+
+.page-selected:hover {
+    opacity: 90%;
+}
+
+

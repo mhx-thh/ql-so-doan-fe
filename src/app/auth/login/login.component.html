@@ -1,0 +1,19 @@
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+<form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading" ngNativeValidate>
+<div class="grid">
+  <div class="login__container">
+    <div class="login__left">
+      <p class="login__title">
+        ĐĂNG NHẬP
+      </p>
+        <input class="login__input" placeholder="Email" name="email" ngModel type="email" placeholder="Username" #emailInput="ngModel" required email>
+        <input class="login__input" placeholder="Password" type="password" name="password" ngModel placeholder="Password" #passworInput="ngModel" required>
+        <div class="login__button">
+          <button class="login__button-continue button" type="submit" *ngIf="!isLoading">
+            Tiếp Tục
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
+</form>

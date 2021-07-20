@@ -1,0 +1,44 @@
+.statistic-table--row {
+    display: flex;
+    justify-content: space-around;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+}
+
+.statistic-table--row > div {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;    
+    align-self: center;
+}
+
+.statistic-table--row > div:nth-child(1) {
+    width: 120px;
+    color: #00AA50;
+    cursor: pointer;
+}
+
+.statistic-table--row > div:nth-child(2) {
+    width: 120px;
+}
+
+.statistic-table--row > div:nth-child(3) {
+    width: 140px;
+}
+
+.statistic-table--row > div:nth-child(4) {
+    width: 105px;
+}
+
+.statistic-table--row > div:nth-child(5) {
+    width: 140px;
+}
+
+.statistic-table--row > div:nth-child(6) {
+    width: 110px;
+}
+
+

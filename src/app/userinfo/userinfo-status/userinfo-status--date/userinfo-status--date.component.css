@@ -1,0 +1,10 @@
+.status-date {
+    background: #EEEEEE;
+    border: 0.5px solid #999999;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    font-weight: bold;
+    line-height: 38px;
+    padding-left: 15px;
+}

@@ -1,0 +1,103 @@
+.address--add {
+    background-color: #fff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    padding: 45px 0 45px 50px;
+}
+
+.address--add__name {
+    display: flex;
+}
+
+.address--add-label {
+    align-self: center;
+    width: 200px;
+    font-size: 16px;
+}
+
+.address--add-value {
+    align-self: center;
+    width: 70%;
+    height: 40px;
+    padding-left: 25px;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: none;
+}
+
+.address--add__name-value {
+    align-self: center;
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 70%;
+    height: 40px;
+    background: #F6F7F8;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    padding-left: 25px;
+    border-radius: 3px;
+}
+
+.address--add__phone {
+    display: flex;
+    margin: 13px 0;
+}
+
+.address--add__city {
+    display: flex;
+    margin: 13px 0;
+}
+
+
+.address--add__district {
+    display: flex;
+    margin: 13px 0;
+}
+
+.address--add__ward {
+    display: flex;
+    margin: 13px 0;
+}
+
+.address--add__address {
+    display: flex;
+    margin: 13px 0;
+}
+
+.address--add__default {
+    display: flex;
+    margin-top: 45px;
+}
+
+.address--add__default-checkbox {
+    align-self: center;
+    margin-right: 10px;
+    margin-left: 203px;
+    opacity: 60%;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+.address-add-button {
+    width: 158px;
+    height: 40px;
+    background: #00AA50;
+    border-radius: 3px;   
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF; 
+    border: none;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.address-add-button:hover {
+    opacity: 90%;
+}
+

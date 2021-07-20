@@ -1,0 +1,25 @@
+main{
+  width: 90%;
+  margin: auto 5%;
+  padding-bottom: 15%;
+  padding-top: 5%;
+  background-color: #F6F7F8;
+}
+.booking-complete-text{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+}
+.select-payment{
+  background-color: #ffffff;
+  margin: 20px auto;
+}
+label{
+  margin: 15px auto !important;
+}
+label img{
+  margin: auto 10px;
+}
+.booking-complete-button{
+  margin-top: 5%;
+}

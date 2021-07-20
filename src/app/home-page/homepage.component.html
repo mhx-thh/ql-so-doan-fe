@@ -1,0 +1,6 @@
+<div *ngIf="!userIsAuthenticated">
+  <div class="homepage-slogan">
+    <div class="slogan-text">Chào mừng bạn đến với website quản lý sổ đoàn trường Đại học Khoa học Tự nhiên</div>
+  </div>
+</div>
+<app-product *ngIf="userIsAuthenticated"></app-product>

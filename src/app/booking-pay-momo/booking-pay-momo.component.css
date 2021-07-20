@@ -1,0 +1,30 @@
+main{
+  width: 90%;
+  margin: auto 5%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  background-color: #F6F7F8;
+}
+.booking-complete-text{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+}
+.qr-scan{
+  background-color: #ffffff;
+  display: flex;
+}
+.booking-complete-button{
+  margin-top: 5%;
+}
+.bold{
+  font-weight: bold !important;
+}
+.qr-scan-tutor{
+  margin: auto 19px;
+
+  width: 50%;
+}
+.qr-scan-pay{
+  width: 50%;
+}

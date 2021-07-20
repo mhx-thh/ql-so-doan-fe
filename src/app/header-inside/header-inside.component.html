@@ -1,0 +1,33 @@
+<mat-toolbar style="padding-left: 0;padding-right: 0;">
+  <div class="header-inside" >
+    <div class="header-inside__logo">
+      <a href="/homepage">
+        <img id="logo1" src="../../assets/svg/Safago/20210321041454!Huy_Hiệu_Đoàn.png" alt="Logo" />
+        <img id="logo2" src="../../assets/svg/Safago/dai_hoc_khoa_hoc_tu_nhien_dhqg-hcm.png" alt="Logo" />
+      </a>
+    </div>
+    <div class="header-inside__user">
+        <img src="../../assets/svg/NoneAvatar.svg" alt="" class="header-inside__avatar">
+        <div class="header-inside__user-name">{{username}}</div>
+        <p class="header-inside__user-arrow">▼</p>
+        <ul class="header-inside__user-menu">
+            <a *ngIf="typeAccount == 'Customer'" href="/userinside" class="header-inside__user-item__link">
+                <li class="header-inside__user-item">Tài khoản của tôi</li>
+            </a>
+            <a *ngIf="typeAccount == 'Delivery Company'" href="/partnerinfo" class="header-inside__user-item__link">
+              <li class="header-inside__user-item">Tài khoản của tôi</li>
+            </a>
+            <a href="#" class="header-inside__user-item__link">
+            <li class="header-inside__user-item">Quản lý đơn hàng</li>
+            </a>
+            <a href="#" class="header-inside__user-item__link">
+            <li class="header-inside__user-item">Gói dịch vụ</li>
+            </a>
+            <a href="#" class="header-inside__user-item__link">
+            <li class="header-inside__user-item header-inside__user-item--logout" (click)="onLogout()">Đăng xuất</li>
+            </a>
+        </ul>
+    </div>
+</div>
+</mat-toolbar>
+

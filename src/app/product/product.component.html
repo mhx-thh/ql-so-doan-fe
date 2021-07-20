@@ -1,0 +1,234 @@
+<div class="product-container">
+  <div class="partnerImg">
+    <div class="partnerImgRow1">
+      <mat-grid-list cols="6" rows="2" rowHeight="2:1" [gutterSize]="'10px'">
+        <mat-grid-tile colspan="4" rowspan="2">
+          <img src="../../assets/svg/partner.svg" alt="" />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <img src="../../assets/svg/partner.svg" alt="" />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <img src="../../assets/svg/partner.svg" alt="" />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+          <img src="../../assets/svg/partner.svg" alt="" />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+          <img src="../../assets/svg/partner.svg" alt="" />
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="partnerImgRow2"></div>
+  </div>
+  <div class="product-content">
+    <div class="product-sidebar">
+      <div class="content-title">
+        <span>DANH MỤC</span>
+        <div class="underline"></div>
+      </div>
+      <div class="content-selector">
+        <ul>
+          Tất cả
+          <li>Giao hàng trong 30 phút</li>
+          <li>Giao hàng trong 60 phút</li>
+          <li>Giao hàng trong 2 tiếng</li>
+          <li>Giao hàng tiêu chuẩn</li>
+        </ul>
+        <div class="content-rating">
+          <div class="content-rating-title">ĐÁNH GIÁ</div>
+          <div class="underline"></div>
+          <ul>
+            Tất cả
+            <li>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+            </li>
+            <li>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star"></i>
+              <span> trở lên</span>
+            </li>
+            <li>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <span> trở lên</span>
+            </li>
+            <li>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <span> trở lên</span>
+            </li>
+            <li>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <span> trở lên</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="product-main-content">
+      <div class="product-filter">
+        <div class="product-filter-left">
+          <div class="filter-title">Sắp xếp theo</div>
+          <button type="button" class="btn btn-success">Phổ biến</button>
+          <div class="filter-dropdown">
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select
+                class="custom-select"
+                id="inputGroupSelect01"
+                (click)="changeProvince()"
+              >
+                <option value="">Giá</option>
+                <option *ngFor="let province of provinces" value="{{ city }}">
+                  {{ province }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="product-filter-right">
+          <div class="filter-pagination">
+            <div class="text">1/100</div>
+            <i class="fas fa-less-than"></i>
+            <i class="fas fa-greater-than"></i>
+          </div>
+        </div>
+      </div>
+      <div class="locationSelect">
+        <div class="location-received">
+          <div class="title">
+            <mat-label class="header">Nhận hàng tại</mat-label>
+          </div>
+          <div class="select">
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select
+                [(ngModel)]="selectedProvince"
+                class="custom-select"
+                id="inputGroupSelect01"
+                (click)="changeProvince()"
+                (change)="selectDistrict($event.target.value)">
+                <option  disabled selected>Tỉnh/Thành Phố</option>
+                <option [value]="province" *ngFor="let province of provinces" >
+                  {{ province }}
+                </option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select class="custom-select"
+               id="inputGroupSelect01"
+               (change)="selectWard($event.target.value)"
+               [(ngModel)]="selectedDistrict">
+                <option selected disabled >Quận/Huyện</option>
+                <option  *ngFor="let item of districts" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select class="custom-select"
+               id="inputGroupSelect01"
+               [(ngModel)]="selectedWard">>
+                <option selected disabled>Phường/Xã</option>
+                <option  *ngFor="let item of wards" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+          </div>
+          <mat-form-field appearance="none">
+            <input matInput placeholder="Số nhà" />
+          </mat-form-field>
+        </div>
+        <div class="location-delivery">
+          <div class="title">
+            <mat-label class="header">Giao đến</mat-label>
+          </div>
+          <div class="select">
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select
+                [(ngModel)]="selectedProvince1"
+                class="custom-select"
+                id="inputGroupSelect01"
+                (click)="changeProvince1()"
+                (change)="selectDistrict1($event.target.value)">
+                <option  disabled selected>Tỉnh/Thành Phố</option>
+                <option [value]="province" *ngFor="let province of provinces1" >
+                  {{ province }}
+                </option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select class="custom-select"
+               id="inputGroupSelect01"
+               (change)="selectWard1($event.target.value)"
+               [(ngModel)]="selectedDistrict1">
+                <option selected disabled >Quận/Huyện</option>
+                <option  *ngFor="let item of districts1" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <select class="custom-select"
+               id="inputGroupSelect01"
+               [(ngModel)]="selectedWard1">>
+                <option selected disabled>Phường/Xã</option>
+                <option  *ngFor="let item of wards1" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+          </div>
+          <mat-form-field appearance="none">
+            <input matInput placeholder="Nhập địa chỉ" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="product-list">
+        <div class="product-item" *ngFor="let item of products">
+          <div class="item-header">
+            <div class="item-header-like">Yêu thích</div>
+            <div class="item-header-discount">
+              <div class="discount-value">{{item.discount}}</div>
+              <div class="discount-title">GIẢM</div>
+            </div>
+          </div>
+          <div class="item-logo" style="height: 56px;width: 200px;">
+            <img src="{{item.img}}" alt="" />
+          </div>
+          <div class="item-name">{{item.name}}</div>
+          <div class="item-price">Chỉ từ {{item.price}}đ</div>
+          <div class="item-react">
+            <div class="item-react-heart">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="item-react-start">
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+              <i class="fa fa-star checked"></i>
+            </div>
+          </div>
+          <div class="item-quantity">Đã giao {{item.deliCount}}k</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

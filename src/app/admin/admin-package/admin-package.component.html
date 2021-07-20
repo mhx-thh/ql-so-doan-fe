@@ -1,0 +1,9 @@
+<div class="package-title">Gói dịch vụ</div>
+<div id="package-btn" class="package-btn">
+    <div>+</div>
+    <div>Thêm gói dịch vụ mới</div>
+</div>
+<div *ngFor="let package of packages;let i=index">
+    <app-adminpackage--tag [(package)] = "packages[i]"></app-adminpackage--tag>
+</div>
+

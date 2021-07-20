@@ -1,0 +1,28 @@
+<div class="statistic-title">Thống kê</div>
+<div class="statistic-table">
+    <div class="statistic-table--title">
+        <div>Doanh nghiệp</div>
+        <div>Ngày tham gia</div>
+        <div>Số đơn tháng này</div>
+        <div>Tổng số đơn</div>
+        <div>Thu trong tháng</div>
+        <div>Chiết khấu</div>
+    </div>
+    <div class="statistic-table--row">
+        <app-adminstatistic--row></app-adminstatistic--row>
+    </div>
+    <div *ngFor="let manageRow of manageRows; let i=index">
+        <app-adminstatistic--row [(manageRow)] = "manageRows[i]"></app-adminstatistic--row>
+    </div>
+    <div class="statistic-page">
+        <img src="../../../assets/svg/image 107.svg" alt="">
+        <div class="page-selected">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>...</div>
+        <img src="../../../assets/svg/image 108.svg" alt="">
+    </div>
+</div>

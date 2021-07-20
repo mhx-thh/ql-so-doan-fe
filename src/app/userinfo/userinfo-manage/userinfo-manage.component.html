@@ -1,0 +1,29 @@
+<div class="manage-title">Quản lý đơn hàng</div>
+<div class="manage-table">
+    <div class="manage-table--title">
+        <div>Mã đơn hàng</div>
+        <div>Ngày đặt</div>
+        <div>Vận chuyển</div>
+        <div>Cước phí</div>
+        <div>Trạng thái đơn hàng</div>
+    </div>
+    <div class="manage-table--row">
+        <app-usermanage-row></app-usermanage-row>
+    </div>
+    <div *ngFor="let manageRow of manageRows; let i = index;">
+        <app-usermanage-row [(manageRow)] = "manageRows[i]"></app-usermanage-row>
+    </div>
+
+    <div class="manage-page">
+        <img src="../../../assets/svg/image 107.svg" alt="">
+        <div class="page-selected">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>...</div>
+        <img src="../../../assets/svg/image 108.svg" alt="">
+    </div>
+
+</div>

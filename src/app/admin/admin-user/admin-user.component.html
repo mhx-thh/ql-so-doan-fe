@@ -1,0 +1,30 @@
+<div class="user-title">Quản lý người dùng</div>
+<div class="user-table">
+    <div class="user-table--title">
+        <div>Mã người dùng</div>
+        <div>Tên người dùng</div>
+        <div>Email</div>
+        <div>Gói dịch vụ</div>
+        <div>Số đơn</div>
+        <div>Tổng chi</div>
+    </div>
+    <div class="user-table--row">
+        <app-adminuser--row></app-adminuser--row>
+    </div>
+    
+    <div *ngFor="let userRow of userRows;let i=index">
+        <app-adminuser--row [(userRow)] = "userRows[i]"></app-adminuser--row>
+    </div>
+    <div class="user-page">
+        <img src="../../../assets/svg/image 107.svg" alt="">
+        <div class="page-selected">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>...</div>
+        <img src="../../../assets/svg/image 108.svg" alt="">
+    </div>
+    
+</div>

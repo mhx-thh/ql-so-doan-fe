@@ -1,0 +1,80 @@
+.service {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.service-tag__name {
+    position: relative;
+    font-size: 18px;
+    width: auto;
+}
+
+.service::after {
+    content: 'Đăng ký';
+    cursor: pointer;
+    position: absolute;
+    color: #00AA50;
+    font-size: 16px;
+    right: 15px;
+    top: 15px;
+    font-weight: 300;
+}
+
+.service-tag__name::after {
+    content: 'Gói dịch vụ hiện tại';
+    position: absolute;
+    color: #00AA50;
+    font-size: 16px;
+    left: 150px;
+    font-weight: 300;
+    display: none;
+}
+
+.service-tag__name::before {
+    content: 'Huỷ';
+    position: absolute;
+    color: red;
+    font-size: 16px;
+    font-weight: 300;
+    right: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.service-tag__content {
+    display: flex;
+    margin: 10px 0;
+}
+
+.service-tag__label {
+    font-size: 16px;
+    font-weight: 300;
+    margin-right: 5px;
+}   
+
+.service-tag__value {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.service-tag__valid {
+    display: flex;
+}
+
+.service-tag__price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.price-value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.price-unit {
+    font-size: 16px;
+}

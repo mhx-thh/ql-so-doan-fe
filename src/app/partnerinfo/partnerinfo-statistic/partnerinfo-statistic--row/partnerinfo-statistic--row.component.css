@@ -1,0 +1,32 @@
+.statistic-row {
+    display: flex;
+    justify-content: space-around;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+}
+
+.statistic-row > div {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;    
+    align-self: center;
+}
+
+.statistic-row--date {
+    width: 150px;
+}
+
+.statistic-row--count {
+    width: 60px;
+}
+
+.statistic-row--rate {
+    width: 130px;
+}
+.statistic-row--earn {
+    width: 130px;
+    
+}

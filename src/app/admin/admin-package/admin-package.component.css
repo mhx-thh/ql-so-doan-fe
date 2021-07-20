@@ -1,0 +1,36 @@
+.package-title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+.package-btn {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.package-btn:hover {
+    opacity: 90%;
+}
+
+.package-btn > div:nth-child(1) {
+    font-size: 32px;
+    opacity: 60%;
+    align-self: center;
+    margin-right: 20px;
+}
+
+.package-btn > div:nth-child(2) {
+    font-size: 18px;
+    color: #00AA50;
+    align-self: center;
+}
+
+

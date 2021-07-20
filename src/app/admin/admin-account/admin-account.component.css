@@ -1,0 +1,73 @@
+.account-title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+.account-container {
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    padding: 30px 50px;
+}
+
+.account-all {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.account-user {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.account-enterprise {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.account-new {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.account-label {
+    width: 230px;
+    align-self: center;
+    font-size: 16px;
+    color: #666;
+}
+
+.account-value {
+    align-self: center;
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+    background: #F6F7F8;
+    border: 2px solid #D4E2E7;
+    height: 40px;
+    padding-left: 15px;
+    line-height: 38px;
+}
+
+.account-btn {
+    align-self: center;
+    background: #00AA50;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.account-btn:hover {
+    opacity: 90%;
+}

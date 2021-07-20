@@ -1,0 +1,80 @@
+.package {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.package-tag__name {
+    position: relative;
+    font-size: 18px;
+    width: auto;
+}
+
+.package::after {
+    content: 'Chỉnh sửa';
+    cursor: pointer;
+    position: absolute;
+    color: #00AA50;
+    font-size: 16px;
+    right: 60px;
+    top: 15px;
+    font-weight: 300;
+}
+
+.package-tag__name::after {
+    content: 'Gói dịch vụ hiện tại';
+    position: absolute;
+    color: #00AA50;
+    font-size: 16px;
+    left: 150px;
+    font-weight: 300;
+    display: none;
+}
+
+.package-tag__name::before {
+    content: 'Xoá';
+    position: absolute;
+    color: red;
+    font-size: 16px;
+    font-weight: 300;
+    right: 0;
+    cursor: pointer;
+}
+
+.package-tag__content {
+    display: flex;
+    margin: 10px 0;
+}
+
+.package-tag__label {
+    font-size: 16px;
+    font-weight: 300;
+    margin-right: 5px;
+}   
+
+.package-tag__value {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.package-tag__valid {
+    display: flex;
+}
+
+.package-tag__price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.price-value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.price-unit {
+    font-size: 16px;
+}

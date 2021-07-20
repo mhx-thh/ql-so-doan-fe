@@ -1,0 +1,49 @@
+.userinfo {
+  display: flex;
+  background-color: #f6f7f8;
+  width: 100vw;
+  min-width: 1200px;
+  min-height: 550px;
+}
+
+.userinfo__blankspace {
+  height: 90px;
+  width: 100vw;
+  background-color: #f6f7f8;
+}
+
+.userinfo__sidebar {
+  margin-left: 80px;
+  width: 23%;
+  max-width: 300px;
+}
+
+.userinfo-address {
+  width: 70%;
+  padding-right: 80px;
+  display: none;
+}
+
+.userinfo-account {
+  width: 70%;
+  padding-right: 80px;
+
+}
+
+.userinfo-service {
+  width: 70%;
+  padding-right: 80px;
+  display: none;
+}
+
+.userinfo-manage {
+  width: 90%;
+  padding-right: 80px;
+  display: none;
+}
+
+.userinfo-status {
+  width: 70%;
+  padding-right: 80px;
+  display: none;
+}

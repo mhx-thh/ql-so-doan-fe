@@ -1,0 +1,58 @@
+.partnerinfo__blankspace {
+    height: 90px;
+    width: 100vw;
+}
+
+.partnerinfo {
+    display: flex;
+    background-color: #f6f7f8;
+    width: 100vw;
+    min-width: 1200px;
+    min-height: 550px;    
+}
+
+.partnerinfo__sidebar {
+    margin-left: 80px;
+    width: 23%;
+    max-width: 300px;
+}
+
+.partnerinfo-account {
+    width: 70%;
+    padding-right: 80px;
+    margin-bottom: 50px;
+}
+
+.partnerinfo-manage {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.partnerinfo-status {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.partnerinfo-statistic {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+
+.partnerinfo-package {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.partnerinfo-post {
+    width: 70%;
+    padding-right: 80px;
+    margin-bottom: 50px;
+    display: none;
+}
+
+

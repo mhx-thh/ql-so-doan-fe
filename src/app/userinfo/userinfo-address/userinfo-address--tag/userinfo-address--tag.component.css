@@ -1,0 +1,95 @@
+.userinfo__address-tag {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.userinfo__address-tag__title {
+    display: flex;
+}
+
+.userinfo__address-tag__select {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #00AA50;
+    display: none;
+}
+
+
+.userinfo__address-tag__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.userinfo__address-tag__name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    margin-right: 20px;
+}
+
+
+.userinfo__address-tag__isselect .userinfo__address-tag__select{
+    display: block;
+}
+
+.userinfo__address-tag__isselect .userinfo__address-tag__delete {
+    display: none;
+}
+
+.userinfo__address-tag__update {
+    display: flex;
+}
+
+.userinfo__address-tag__edit {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #00AA50;
+    cursor: pointer;
+}
+
+.userinfo__address-tag__delete {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    margin-left: 15px;
+    color: #FF4747;
+    cursor: pointer;
+}
+
+.userinfo__address-tag__address {
+    display: flex;
+}
+
+.userinfo__address-tag__label {
+    font-style: normal;
+    font-weight: 400;
+    color: #999;
+    font-size: 18px;
+    line-height: 21px;
+    margin-right: 5px;
+}
+
+.userinfo__address-tag__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+}
+
+.userinfo__address-tag__text > div {
+    margin-left: 5px;
+}
+
+.userinfo__address-tag__phone {
+    display: flex;
+}

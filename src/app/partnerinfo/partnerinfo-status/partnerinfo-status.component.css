@@ -1,0 +1,141 @@
+.status-title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+.status-container {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.descrip-title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.descrip-container {
+    width: 100%;
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.descrip-img {
+    width: 20%;
+}
+
+.descrip-text {
+    width: 80%;
+}
+
+.descrip-type {
+    display: flex;
+}
+
+.descrip-title {
+    width: auto;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.descrip-value {
+    align-self: center;
+    font-size: 16px;
+}
+
+.descrip-size {
+    display: flex;
+}
+
+.descrip-weight {
+    display: flex;
+}
+
+
+.status-btn {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 0.5px solid #999999;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+}   
+
+.status-btn:hover {
+    opacity: 80%;
+}
+
+.status-plus {
+    align-self: center;
+    margin-right: 20px;
+    font-size: 32px;
+    opacity: 60%;
+}   
+
+.status-text {
+    align-self: center;
+    color: #00AA50;
+}   
+
+.status-add {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 0.5px solid #999999;
+    display: flex;
+    display: none;
+}
+
+.status-add--time {
+    border-radius: 0;
+    width: 50px;
+    padding-left: 5px;
+    height: 90%;
+    align-self: center;
+    border-width: 1px;
+    margin: 0 10px;
+}
+
+.status-add--event {
+    border-radius: 0;
+    height: 90%;
+    align-self: center;
+    border-width: 1px;
+    flex: 1;
+}
+
+
+.status-add--btn {
+    width: 120px;
+    height: 90%;
+    background: #00AA50;
+    color: #FFF;
+    font-size: 18px;
+    line-height: 33px;
+    text-align: center;
+    align-self: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.status-add--btn:hover {
+    opacity: 90%;
+}
+

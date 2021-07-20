@@ -1,0 +1,77 @@
+.admin__blankspace {
+    height: 90px;
+    width: 100vw;
+}
+
+.admin {
+    display: flex;
+    background-color: #f6f7f8;
+    width: 100vw;
+    min-width: 1200px;
+    min-height: 550px;    
+}
+
+.admin__sidebar {
+    margin-left: 80px;
+    width: 23%;
+    max-width: 300px;
+}
+
+.admin-account {
+    width: 70%;
+    padding-right: 80px;
+    margin-bottom: 50px;
+}
+
+.admin-manage {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.admin-status {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.admin-statistic {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+
+.admin-package {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.admin-enterprise {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.admin-user {
+    width: 70%;
+    padding-right: 80px;
+    display: none;
+}
+
+.admin-post {
+    width: 70%;
+    padding-right: 80px;
+    margin-bottom: 50px;
+    display: none;
+}
+
+
+.admin-packageadd {
+    width: 70%;
+    padding-right: 80px;
+    margin-bottom: 50px;
+    display: none;
+}
+

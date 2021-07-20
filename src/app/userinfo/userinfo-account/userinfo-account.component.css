@@ -1,0 +1,233 @@
+.account {
+    background-color: #fff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    padding: 45px 0 45px 50px;
+}
+
+.account-title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+.account__name {
+    display: flex;
+    margin: 13px 0;
+}
+
+.account__name > .account-value {
+    padding-left: 10px;
+    background: #F6F7F8;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 35px;  
+}
+
+.account-label {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    width: 200px;
+    align-self: center;
+}
+
+.account-value {
+    height: 40px;
+    width: 70%;
+    align-self: center;
+}
+
+.account__phone {
+    display: flex;
+    margin: 13px 0;
+
+}
+
+.account__phone > .account-value {
+    display: flex;
+}
+
+input {
+    outline: none;
+    background: #FFFFFF;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    border-radius: 3px;    
+    padding-left: 10px;
+}
+
+.account__phone-input {
+    align-self: center;
+    height: 40px;
+    width: 70%;
+    border-radius: 3px 0 0 3px;
+}
+
+.account__phone-btn {
+    align-self: center;
+    width: 30%;
+}
+
+.account__phone-btn > button {
+    width: 100%;
+    height: 40px;
+    background: #00AA50;
+    border-radius: 0px 3px 3px 0px;
+    border: none;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;  
+    color: #FFFFFF;
+}
+
+.account__phone-btn > button:hover {
+    opacity: 90%;
+}
+
+.account__verify {
+    display: flex;
+    margin: 13px 0;
+
+}
+
+.account__email {
+    display: flex;
+    margin: 13px 0;
+
+}
+
+.account__email > .account-value {
+    padding-left: 10px;
+    background: #F6F7F8;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 35px;  
+}
+
+.account__gender {
+    display: flex;
+    margin: 13px 0;
+    position: relative;
+}
+
+.account__gender > .account-value {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 0 10px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.account__gender-menu {
+    position: absolute;
+    top: 38px;
+    left: 200px;
+    width: 70%;
+    display: none;
+}
+
+.account__gender-menu > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.account__gender-item {
+    width: 100%;
+    height: 40px;
+    background-color: #FFF;
+    border: 2px solid;
+    border: 2px solid #D4E2E7;
+    line-height: 34px;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.account__gender-item:hover {
+    background-color: #FAFAFA;
+}
+
+.account__gender-item:nth-child(2) {
+    border-top: none;
+    border-bottom: none;
+    height: 38px;
+}
+
+
+.account-value__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 35px;  
+    align-self: center;
+}
+
+.account-value__arrow {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
+
+.account__birthday {
+    display: flex;
+    margin: 13px 0;
+}
+
+.account__birthday > .account-value {
+    max-width: 220px;
+    border-radius: 0px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.account__type {
+    display: flex;
+    margin: 13px 0;
+
+}
+
+.account__type > .account-value {
+    padding-left: 10px;
+    background: #F6F7F8;
+    border: 2px solid #D4E2E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 35px;  
+}
+
+.address-complete--btn {
+    width: 158px;
+    height: 40px;
+    background: #00AA50;
+    border-radius: 3px;   
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF; 
+    border: none;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.address-complete--btn:hover {
+    opacity: 90%;
+}
