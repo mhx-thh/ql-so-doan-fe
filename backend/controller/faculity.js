@@ -1,16 +1,13 @@
 const Faculity = require('../models/faculity');
 
 exports.addFaculity = async (req, res, next) => {
-  //console.log(req.body.faculityName);
-  let faculity = await faculites.find({id: req.query.faculityName});
-  console.log(faculity);
-  classes.find({ faculity: faculity.id })
-    .then((documents) => {
-      res.status(200).json(documents);
-    })
+  const faculity = new Faculity({ id: req.body.id, name: req.body.name });
+  faculity.save().then((err) => {
+    res.status(200).json({message: err});
+  })
     .catch(error => {
       res.status(500).json({
-        message: "Getting class by name of faculity failed!"
+        message: "Adding faculity failed!"
       })
     })
 }

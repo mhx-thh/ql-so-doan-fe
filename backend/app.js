@@ -9,11 +9,11 @@ const productRoutes = require('./routes/product');
 const payRoutes = require('./routes/pay');
 const sendMailRoutes = require('./routes/sendMail');
 const classRoutes = require('./routes/class');
+const faculityRoutes = require('./routes/faculity');
 
 const app = express();
-
 mongoose.connect(
-  "mongodb+srv://min:"+ process.env.MONGO_ATLAS_PW + "@cluster0.jc1uo.mongodb.net/SAFAGO",
+  "mongodb+srv://nguyentanvinh7a:"+ process.env.MONGO_ATLAS_PW + "@cluster0.ebrk4.mongodb.net/SoDoanKHTN",
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }
 )
   .then(() => { console.log('Connected to database!') })
@@ -47,5 +47,6 @@ app.use('/api/product', productRoutes);
 app.use('/api/pay', payRoutes);
 app.use('/api/sendMail', sendMailRoutes);
 app.use('/api/class', classRoutes);
+app.use('/api/faculity', faculityRoutes);
 
 module.exports = app;
