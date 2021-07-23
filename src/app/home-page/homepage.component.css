@@ -36,41 +36,6 @@
   padding-bottom: 50px;
 }
 
-.link {
-  width: 482px;
-  height: 38px;
-  font-weight: bold;
-  font-size: 32px;
-  color: #000000;
-  line-height: 57px;
-  margin-left: 10px;
-}
-
-.logo-img {
-  margin-right: 10px;
-  width: 60px;
-}
-.column-link {
-  margin-bottom: 40px;
-}
-
-.delivery-title {
-  margin: 0 80px;
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 61px;
-  color: #000000;
-}
-.delivery-logo img{
-  height: 224px;
-  width: 400px;
-  align-items: center;
-  margin-left: 85px;
-}
-.delivery-logo{
-  background-color:
-  #FFFFFF;
-}
 
 @media only screen and (max-width: 480px) {
   .slogan-text {

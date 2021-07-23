@@ -222,7 +222,6 @@ export class AuthService {
   private updateAuthData(username: string, phonenumber: string, gender: string){
     localStorage.setItem('gender', gender);
     localStorage.setItem('phonenumber', phonenumber);
-    localStorage.setItem('gender', gender);
   }
 
   checkExistUserAndSendEmail(email: string) {

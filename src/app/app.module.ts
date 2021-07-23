@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
  import { FormsModule } from '@angular/forms';
+ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -159,7 +160,7 @@ import { BookCommunistYouthUnionComponent } from './book-communist-youth-union/b
     MatSelectModule,
     MatButtonModule,
     FormsModule,
-
+    MatCheckboxModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
