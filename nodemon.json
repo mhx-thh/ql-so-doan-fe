@@ -1,5 +1,6 @@
 {
   "env": {
-    "MONGO_ATLAS_PW": "01685698193"
+    "MONGO_ATLAS_PW": "01685698193",
+    "APIURL": "http://localhost:3000"
   }
 }
