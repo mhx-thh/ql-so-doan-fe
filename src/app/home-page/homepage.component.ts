@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class HomepageComponent implements OnInit {
 
-  username: string ='toan';
+  username: string ='';
   userIsAuthenticated = false;
   private authListenerSubs: Subscription;
   private usernameListenerSubs: Subscription;

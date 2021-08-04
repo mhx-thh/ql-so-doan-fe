@@ -14,10 +14,8 @@ const BACKEND_URL = environment.apiUrl + "/user/";
 export class AuthService {
   private username: string = '';
   private email: string = '';
-  private gender: string = '';
   private token: string;
   private typeAccount: string;
-  private phonenumber: string = '';
   private authStatusListener = new Subject<boolean>();
   private usernameStatusListener = new Subject<string>();
   private tokenTimer: any;
@@ -37,16 +35,8 @@ export class AuthService {
     return this.typeAccount;
   }
 
-  getGender(){
-    return this.gender;
-  }
-
   getToken() {
     return this.token;
-  }
-
-  getPhonenumber() {
-    return this.phonenumber;
   }
 
   getUsernameStatusListener() {
@@ -85,9 +75,6 @@ export class AuthService {
     this.http.post<{name: string, phonenumber: string, gender: string}>(BACKEND_URL + "updateCustomer", {email: CEmail, name: CName, phonenumber: CPhoneNumber, gender: CGender})
       .subscribe((respone) => {
         this.username = respone.name;
-        this.phonenumber = respone.phonenumber;
-        this.gender = respone.gender;
-        this.updateAuthData(this.username, this.phonenumber, this.gender);
         alert("Cập nhật thành công! Quý khách vui lòng đăng nhập lại!");
         this.router.navigate(['/userinside']);
       }, error => {
@@ -109,7 +96,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     const AuthData: AuthData = { email: email, password: password };
-    this.http.post<{ token: string, expiresIn: number , username: string, email: string, typeAccount: string, gender: string, phonenumber: string}>(BACKEND_URL + 'login', AuthData)
+    this.http.post<{ token: string, expiresIn: number , username: string, email: string, typeAccount: string}>(BACKEND_URL + 'login', AuthData)
       .subscribe(respone => {
         const token = respone.token;
         this.token = token;
@@ -119,16 +106,14 @@ export class AuthService {
           this.username = respone.username;
           this.email = respone.email;
           this.typeAccount = respone.typeAccount;
-          this.gender = respone.gender;
-          this.phonenumber = respone.phonenumber;
           this.setAuthTimer(expiresInDuration);
           this.usernameStatusListener.next(this.username);
           this.authStatusListener.next(true);
           this.isAuthenticated = true;
           const now = new Date();
           const expirationDate = new Date(now.getTime() + expiresInDuration * 1000);
-          this.saveAuthData(token, expirationDate,this.username, this.email, this.typeAccount, this.gender, this.phonenumber);
-          this.router.navigate(['/']);
+          this.saveAuthData(token, expirationDate,this.username, this.email, this.typeAccount);
+          this.router.navigate(['/admin']);
         }
       }, error => {
         this.authStatusListener.next(false);
@@ -149,8 +134,6 @@ export class AuthService {
       this.username = authInformation.username;
       this.email = authInformation.email;
       this.typeAccount = authInformation.typeAccount;
-      this.gender = authInformation.gender;
-      this.phonenumber = authInformation.phonenumber;
       this.setAuthTimer(expiresIn / 1000);
       this.authStatusListener.next(true);
       this.usernameStatusListener.next(username);
@@ -162,9 +145,7 @@ export class AuthService {
     this.isAuthenticated = false;
     this.username = '';
     this.email = '';
-    this.gender = '';
     this.typeAccount = '';
-    this.phonenumber = '';
     this.authStatusListener.next(false);
     this.router.navigate(['/homepage']);
     this.clearAuthData();
@@ -177,14 +158,12 @@ export class AuthService {
     }, duration * 1000);
   }
 
-  private saveAuthData(token: string, expirationDate: Date,username: string, email: string, typeAccount: string, gender: string, phonenumber: string) {
+  private saveAuthData(token: string, expirationDate: Date,username: string, email: string, typeAccount: string) {
     localStorage.setItem('token', token);
     localStorage.setItem('username', username);
     localStorage.setItem('expiration', expirationDate.toISOString());
     localStorage.setItem('email', email);
     localStorage.setItem('typeAccount', typeAccount);
-    localStorage.setItem('gender', gender);
-    localStorage.setItem('phonenumber', phonenumber);
   }
 
   private clearAuthData() {
@@ -193,8 +172,6 @@ export class AuthService {
     localStorage.removeItem('expiration');
     localStorage.removeItem('email');
     localStorage.removeItem('typeAccount');
-    localStorage.removeItem('gender');
-    localStorage.removeItem('phonenumber');
   }
 
   private getAuthData() {

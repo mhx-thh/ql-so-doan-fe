@@ -4,7 +4,8 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://sodoanbackend.herokuapp.com/api'
+  //apiUrl: 'https://sodoanbackend.herokuapp.com/api'
+  apiUrl: 'http://localhost:3000/api'
 };
 
 /*
