@@ -36,9 +36,10 @@ export class BookCommunistYouthUnionComponent implements OnInit, OnDestroy {
   selectedClass = "Lớp";
 
   ngOnInit() {
-    this.getFaculities();
+    //ngOnInit là khi khởi tạo sẽ get ds khoa lun
+    this.getFaculities();  //1
   }
-
+  //2
   getFaculities(): void {
     this.faculitiesService.getFaculities().subscribe(
       faculities => {

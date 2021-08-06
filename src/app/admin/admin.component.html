@@ -1,1 +1,503 @@
-<app-admin></app-admin>
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a>pro sidebar</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded"
+            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">
+            <strong>{{username}}</strong>
+          </span>
+          <span class="user-role">{{typeAccount}}</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a>
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Quản lý đoàn viên</span>
+              <span class="badge badge-pill badge-warning">New</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a (click)="onPheDuyetSoDoan()">Phê duyệt sổ đoàn</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown" (click)="onQuanLyViTri()">
+            <a>
+              <i class="fa fa-shopping-cart"></i>
+              <span>Quản lý vị trí</span>
+              <span class="badge badge-pill badge-danger">3</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a>Products
+
+                  </a>
+                </li>
+                <li>
+                  <a>Orders</a>
+                </li>
+                <li>
+                  <a>Credit cart</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown" (click)="onQuanLyKhoaVaChiDoan()">
+            <a>
+              <i class="far fa-gem"></i>
+              <span>Quản lý Khoa/Chi Đoàn</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a>General</a>
+                </li>
+                <li>
+                  <a>Panels</a>
+                </li>
+                <li>
+                  <a>Tables</a>
+                </li>
+                <li>
+                  <a>Icons</a>
+                </li>
+                <li>
+                  <a>Forms</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown" (click)="onQuanLyChuyenDoanVien()">
+            <a>
+              <i class="fa fa-chart-line"></i>
+              <span>Quản lý chuyển Đoàn viên</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a>Pie chart</a>
+                </li>
+                <li>
+                  <a>Line chart</a>
+                </li>
+                <li>
+                  <a>Bar chart</a>
+                </li>
+                <li>
+                  <a>Histogram</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown" (click)="onLichSuViTriSo()">
+            <a>
+              <i class="fa fa-globe"></i>
+              <span>Lịch sử vị trí sổ</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a>Google maps</a>
+                </li>
+                <li>
+                  <a>Open street map</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-menu">
+            <span>Extra</span>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-book"></i>
+              <span>Documentation</span>
+              <span class="badge badge-pill badge-primary">Beta</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-calendar"></i>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-folder"></i>
+              <span>Examples</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a>
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a>
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a>
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a>
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="pheDuyetSoDoan" *ngIf="screen==='pheDuyetSoDoan'">
+      <div class="container-fluid">
+        <h2>Phê duyệt sổ Đoàn</h2>
+        <hr>
+        <div>
+
+          <h4 class="text-muted mb-4">Tables </h4>
+
+          <div class="row mb-4">
+
+            <div class="col-md-12">
+              <div class="card border-0 rounded-0">
+                <div class="card-title mb-1 p-3">
+                  <h5>Basic table</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-md">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">MSSV</th>
+                          <th scope="col">Họ và tên</th>
+                          <th scope="col">Ngày tháng năm sinh</th>
+                          <th scope="col">Giới tính</th>
+                          <th scope="col">Chi Đoàn</th>
+                          <th scope="col">Khoa</th>
+                          <th scope="col">SĐT</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Ngày vào Đoàn</th>
+                          <th scope="col">Ngày vào Đảng</th>
+                          <th scope="col">Cán bộ Đoàn cấp 3</th>
+                          <th scope="col">Cán bộ lớp cấp 3</th>
+                          <th scope="col">Năng khiếu</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let faculity of faculities">
+                          <th scope="row">{{faculity.id}}</th>
+                          <td>{{faculity.name}}</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <span class="badge badge-primary rounded-0 p-1">Fixed</span>
+                          </td>
+                          <td>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quanLyViTri" *ngIf="screen==='quanLyViTri'">
+      <div class="container-fluid">
+        <h2>Quản lý vị trí</h2>
+        <hr>
+        <div>
+          <h4 class="text-muted mb-4">Tables </h4>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <div class="card border-0 rounded-0">
+                <div class="card-title mb-1 p-3">
+                  <h5>Basic table</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-md">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">MSSV</th>
+                          <th scope="col">Họ và tên</th>
+                          <th scope="col">Ngày tháng năm sinh</th>
+                          <th scope="col">Giới tính</th>
+                          <th scope="col">Chi Đoàn</th>
+                          <th scope="col">Khoa</th>
+                          <th scope="col">SĐT</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Ngày vào Đoàn</th>
+                          <th scope="col">Ngày vào Đảng</th>
+                          <th scope="col">Cán bộ Đoàn cấp 3</th>
+                          <th scope="col">Cán bộ lớp cấp 3</th>
+                          <th scope="col">Năng khiếu</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let faculity of faculities">
+                          <th scope="row">{{faculity.id}}</th>
+                          <td>{{faculity.name}}</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <span class="badge badge-primary rounded-0 p-1">Fixed</span>
+                          </td>
+                          <td>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quanLyKhoaVaChiDoan" *ngIf="screen==='quanLyKhoaVaChiDoan'">
+      <div class="container-fluid">
+        <h2>Quản lý Khoa và Chi Đoàn</h2>
+        <hr>
+        <div>
+          <h4 class="text-muted mb-4">Tables </h4>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <div class="card border-0 rounded-0">
+                <div class="card-title mb-1 p-3">
+                  <h5>Basic table</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-md">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">MSSV</th>
+                          <th scope="col">Họ và tên</th>
+                          <th scope="col">Ngày tháng năm sinh</th>
+                          <th scope="col">Giới tính</th>
+                          <th scope="col">Chi Đoàn</th>
+                          <th scope="col">Khoa</th>
+                          <th scope="col">SĐT</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Ngày vào Đoàn</th>
+                          <th scope="col">Ngày vào Đảng</th>
+                          <th scope="col">Cán bộ Đoàn cấp 3</th>
+                          <th scope="col">Cán bộ lớp cấp 3</th>
+                          <th scope="col">Năng khiếu</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let faculity of faculities">
+                          <th scope="row">{{faculity.id}}</th>
+                          <td>{{faculity.name}}</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <span class="badge badge-primary rounded-0 p-1">Fixed</span>
+                          </td>
+                          <td>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quanLyChuyenDoanVien" *ngIf="screen==='quanLyChuyenDoanVien'">
+      <div class="container-fluid">
+        <h2>Quản lý chuyển Đoàn viên</h2>
+        <hr>
+        <div>
+          <h4 class="text-muted mb-4">Tables </h4>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <div class="card border-0 rounded-0">
+                <div class="card-title mb-1 p-3">
+                  <h5>Basic table</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-md">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">MSSV</th>
+                          <th scope="col">Họ và tên</th>
+                          <th scope="col">Ngày tháng năm sinh</th>
+                          <th scope="col">Giới tính</th>
+                          <th scope="col">Chi Đoàn</th>
+                          <th scope="col">Khoa</th>
+                          <th scope="col">SĐT</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Ngày vào Đoàn</th>
+                          <th scope="col">Ngày vào Đảng</th>
+                          <th scope="col">Cán bộ Đoàn cấp 3</th>
+                          <th scope="col">Cán bộ lớp cấp 3</th>
+                          <th scope="col">Năng khiếu</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let faculity of faculities">
+                          <th scope="row">{{faculity.id}}</th>
+                          <td>{{faculity.name}}</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <span class="badge badge-primary rounded-0 p-1">Fixed</span>
+                          </td>
+                          <td>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lichSuViTriSo" *ngIf="screen==='lichSuViTriSo'">
+      <div class="container-fluid">
+        <h2>Lịch sử vị trí sổ Đoàn viên</h2>
+        <hr>
+        <div>
+          <h4 class="text-muted mb-4">Tables </h4>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <div class="card border-0 rounded-0">
+                <div class="card-title mb-1 p-3">
+                  <h5>Basic table</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-md">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">MSSV</th>
+                          <th scope="col">Họ và tên</th>
+                          <th scope="col">Ngày tháng năm sinh</th>
+                          <th scope="col">Giới tính</th>
+                          <th scope="col">Chi Đoàn</th>
+                          <th scope="col">Khoa</th>
+                          <th scope="col">SĐT</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Ngày vào Đoàn</th>
+                          <th scope="col">Ngày vào Đảng</th>
+                          <th scope="col">Cán bộ Đoàn cấp 3</th>
+                          <th scope="col">Cán bộ lớp cấp 3</th>
+                          <th scope="col">Năng khiếu</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let faculity of faculities">
+                          <th scope="row">{{faculity.id}}</th>
+                          <td>{{faculity.name}}</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <span class="badge badge-primary rounded-0 p-1">Fixed</span>
+                          </td>
+                          <td>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
