@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { AuthService } from './auth/auth.service';
@@ -9,9 +9,12 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy{
-  title: 'Safago';
+  //@Input()
+  //username: string;
 
-  username: string ='toan';
+  username: string ='';
+
+  title: 'Safago';
   userIsAuthenticated = false;
   private authListenerSubs: Subscription;
   private usernameListenerSubs: Subscription;
