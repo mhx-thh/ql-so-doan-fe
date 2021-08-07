@@ -62,7 +62,7 @@ body {
 /*----------------page-wrapper----------------*/
 
 .page-wrapper {
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .page-wrapper .theme {
@@ -96,6 +96,7 @@ body {
   border-radius: 0 4px 4px 0px;
   width: 35px;
   transition-delay: 0.3s;
+  z-index: 10;
 }
 .page-wrapper.toggled #show-sidebar {
   left: -40px;
@@ -215,6 +216,7 @@ body {
   font-size: 14px;
   padding: 15px 20px 5px 20px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .sidebar-wrapper .sidebar-menu ul li a {
@@ -223,6 +225,7 @@ body {
   text-decoration: none;
   position: relative;
   padding: 8px 30px 8px 20px;
+  cursor: pointer;
 }
 
 .sidebar-wrapper .sidebar-menu ul li a i {
@@ -233,6 +236,7 @@ body {
   line-height: 30px;
   text-align: center;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .sidebar-wrapper .sidebar-menu ul li a:hover > i::before {

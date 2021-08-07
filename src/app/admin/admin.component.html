@@ -191,15 +191,12 @@
     </div>
   </nav>
   <!-- sidebar-wrapper  -->
-  <main class="page-content">
+  <div class="page-content">
     <div class="pheDuyetSoDoan" *ngIf="screen==='pheDuyetSoDoan'">
       <div class="container-fluid">
         <h2>Phê duyệt sổ Đoàn</h2>
         <hr>
         <div>
-
-          <h4 class="text-muted mb-4">Tables </h4>
-
           <div class="row mb-4">
 
             <div class="col-md-12">
@@ -322,42 +319,61 @@
         <h2>Quản lý Khoa và Chi Đoàn</h2>
         <hr>
         <div>
-          <h4 class="text-muted mb-4">Tables </h4>
+          <h4 class="text-muted mb-4">Danh sách khoa </h4>
           <div class="row mb-4">
             <div class="col-md-12">
               <div class="card border-0 rounded-0">
-                <div class="card-title mb-1 p-3">
-                  <h5>Basic table</h5>
-                </div>
                 <div class="card-body">
                   <div class="table-responsive-md">
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th scope="col">MSSV</th>
-                          <th scope="col">Họ và tên</th>
-                          <th scope="col">Ngày tháng năm sinh</th>
-                          <th scope="col">Giới tính</th>
-                          <th scope="col">Chi Đoàn</th>
-                          <th scope="col">Khoa</th>
-                          <th scope="col">SĐT</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Ngày vào Đoàn</th>
-                          <th scope="col">Ngày vào Đảng</th>
-                          <th scope="col">Cán bộ Đoàn cấp 3</th>
-                          <th scope="col">Cán bộ lớp cấp 3</th>
-                          <th scope="col">Năng khiếu</th>
+                          <th scope="col">ID</th>
+                          <th scope="col">Tên Khoa</th>
+                          <th scope="col">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let faculity of faculities">
                           <th scope="row">{{faculity.id}}</th>
                           <td>{{faculity.name}}</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
                           <td>
-                            <span class="badge badge-primary rounded-0 p-1">Fixed</span>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-hand-pointer"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                              <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-lightning rounded-0">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
                           </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4 class="text-muted mb-4">Danh sách Chi đoàn thuộc Khoa</h4>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <div class="card border-0 rounded-0">
+                <div class="card-body">
+                  <div class="table-responsive-md">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Tên Chi đoàn</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let faculity of faculities">
+                          <th scope="row">{{faculity.id}}</th>
+                          <td>{{faculity.name}}</td>
                           <td>
                             <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
                               <i class="far fa-edit"></i>
@@ -497,7 +513,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
   <!-- page-content" -->
 </div>
 <!-- page-wrapper -->
