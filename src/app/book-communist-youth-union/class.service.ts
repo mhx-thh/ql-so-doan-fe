@@ -12,6 +12,6 @@ export class ClassService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getClasses(faculityName: string): Observable<Class[]> {
-    return this.http.get<Class[]>(BACKEND_URL + 'getClass/' + faculityName).pipe();
+    return this.http.get<Class[]>(BACKEND_URL + faculityName).pipe();
   }
 }

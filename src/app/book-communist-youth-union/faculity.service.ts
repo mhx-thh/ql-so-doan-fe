@@ -11,7 +11,7 @@ const BACKEND_URL = environment.apiUrl + "/faculty/";
 export class FaculityService {
   constructor(private http: HttpClient, private router: Router) { }
   getFaculities(): Observable<Faculity[]> {
-    return this.http.get<Faculity[]>(BACKEND_URL + 'listNamefaculty')
+    return this.http.get<Faculity[]>(BACKEND_URL)
       .pipe();
   }
 }
