@@ -5,13 +5,13 @@ import { Faculity } from './faculity.model';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
-const BACKEND_URL = environment.apiUrl + "/faculity/";
+const BACKEND_URL = environment.apiUrl + "/faculty/";
 
 @Injectable({ providedIn: 'root' })
 export class FaculityService {
   constructor(private http: HttpClient, private router: Router) { }
   getFaculities(): Observable<Faculity[]> {
-    return this.http.get<Faculity[]>(BACKEND_URL + 'listNameFaculity')
+    return this.http.get<Faculity[]>(BACKEND_URL + 'listNamefaculty')
       .pipe();
   }
 }
