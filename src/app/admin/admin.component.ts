@@ -40,16 +40,16 @@ export class AdminComponent implements OnInit {
           .addClass("active");
       }
     });
-    $(".footer-content").css("padding-left", "230px");
+    $(".footer-content").css("display", "none");
     $("#close-sidebar").click(function () {
       $(".page-wrapper").removeClass("toggled");
       $("#logo").css("padding-left", "50px");
-      $(".footer-content").css("padding-left", "unset");
+      $(".footer-content").css("display", "block");
     });
     $("#show-sidebar").click(function () {
       $(".page-wrapper").addClass("toggled");
       $("#logo").css("padding-left", "230px");
-      $(".footer-content").css("padding-left", "230px");
+      $(".footer-content").css("display", "none");
     });
     this.username = localStorage.getItem("username");
     this.typeAccount = localStorage.getItem("typeAccount");
