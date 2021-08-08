@@ -2,6 +2,7 @@ export interface Book {
   SID: string;
   Name: string;
   DOB: Date;
+  Gender: string;
   YB: string;
   Faculity: string;
   Phone: string;
