@@ -1,14 +1,35 @@
-<mat-toolbar>
-  <div class="header-logo">
-    <a routerLink="/homepage">
-      <img id="logo1" src="../../assets/svg/Safago/20210321041454!Huy_Hiệu_Đoàn.png" alt="Logo" />
-      <img id="logo2" src="../../assets/svg/Safago/dai_hoc_khoa_hoc_tu_nhien_dhqg-hcm.png" alt="Logo" />
-    </a>
+<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
+    <a class="navbar-brand" href="#" routerLink="/"><img src="../../assets/logo.png" height="30px" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" routerLink="/" data-toggle="dropdown">Trang chủ
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" router data-toggle="dropdown">Chức năng
+            <i class="fab fa-angellist"></i>
+          </a>
+          <!-- Dropdown list -->
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" routerLink="/addBook">Khai báo sổ đoàn</a></li>
+            <li><a class="dropdown-item" href="#">Yêu cầu đổi vị trí sổ đoàn</a></li>
+            <li><a class="dropdown-item" href="#">Yêu cầu rút sổ đoàn</a></li>
+            <li><a class="dropdown-item" href="#">Xem thông tin sổ đoàn</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/about">Thông tin
+            <i class="fas fa-info-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <span>
-    <a routerLink="/homepage"></a>
-  </span>
-  <div class="login" >
-    <a mat-button routerLink="/auth/login">Đăng Nhập</a>
-  </div>
-</mat-toolbar>
+</nav>

@@ -1,33 +1,38 @@
-<mat-toolbar style="padding-left: 0;padding-right: 0;">
-  <div class="header-inside" >
-    <div class="header-inside__logo">
-      <a href="/homepage" id="logo">
-        <img id="logo1" src="../../assets/svg/Safago/20210321041454!Huy_Hiệu_Đoàn.png" alt="Logo" />
-        <img id="logo2" src="../../assets/svg/Safago/dai_hoc_khoa_hoc_tu_nhien_dhqg-hcm.png" alt="Logo" />
-      </a>
+<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
+    <a class="navbar-brand" href="#" routerLink="/"><img src="../../assets/logo.png" height="30px" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" routerLink="/" data-toggle="dropdown">Trang chủ
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" router data-toggle="dropdown">Chức năng
+            <i class="fab fa-angellist"></i>
+          </a>
+          <!-- Dropdown list -->
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" routerLink="/addBook">Khai báo sổ đoàn</a></li>
+            <li><a class="dropdown-item" href="#">Yêu cầu đổi vị trí sổ đoàn</a></li>
+            <li><a class="dropdown-item" href="#">Yêu cầu rút sổ đoàn</a></li>
+            <li><a class="dropdown-item" href="#">Xem thông tin sổ đoàn</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/about">Thông tin
+            <i class="fas fa-info-circle"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/admin">{{username}}</a>
+        </li>
+      </ul>
     </div>
-    <div class="header-inside__user">
-        <img src="../../assets/svg/NoneAvatar.svg" alt="" class="header-inside__avatar">
-        <div class="header-inside__user-name">{{username}}</div>
-        <p class="header-inside__user-arrow">▼</p>
-        <ul class="header-inside__user-menu">
-            <a *ngIf="typeAccount == 'Customer'" href="/userinside" class="header-inside__user-item__link">
-                <li class="header-inside__user-item">Tài khoản của tôi</li>
-            </a>
-            <a *ngIf="typeAccount == 'Delivery Company'" href="/partnerinfo" class="header-inside__user-item__link">
-              <li class="header-inside__user-item">Tài khoản của tôi</li>
-            </a>
-            <a href="#" class="header-inside__user-item__link">
-            <li class="header-inside__user-item">Quản lý đơn hàng</li>
-            </a>
-            <a href="#" class="header-inside__user-item__link">
-            <li class="header-inside__user-item">Gói dịch vụ</li>
-            </a>
-            <a href="#" class="header-inside__user-item__link">
-            <li class="header-inside__user-item header-inside__user-item--logout" (click)="onLogout()">Đăng xuất</li>
-            </a>
-        </ul>
-    </div>
-</div>
-</mat-toolbar>
-
+  </div>
+</nav>
