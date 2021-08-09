@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Faculity } from 'src/app/book-communist-youth-union/faculity.model';
-import { FaculityService } from 'src/app/book-communist-youth-union/faculity.service';
+import { Book } from 'src/app/book/book.model';
+import { BookService } from 'src/app/book/book';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'phe-duyet-so-doan',
@@ -8,14 +9,22 @@ import { FaculityService } from 'src/app/book-communist-youth-union/faculity.ser
   styleUrls: ['./phe-duyet-so-doan.component.css']
 })
 export class PheDuyetSoDoan implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
   constructor(
-    public faculitiesService: FaculityService,
+    public booksService: BookService,
+    public datepipe: DatePipe
   ) { }
 
-  username = '';
-  typeAccount = '';
-  faculities: Faculity[] = [];
+  ngOnInit(): void {
+    this.getNotApprovalBooks();
+  }
+
+
+  books: Book[] = [];
+  getNotApprovalBooks(): void {
+    this.booksService.getNotApprovalBooks().subscribe(
+      Response => {
+        this.books = Response;
+      });
+  }
 }

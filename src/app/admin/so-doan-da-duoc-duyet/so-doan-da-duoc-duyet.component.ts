@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Faculity } from 'src/app/book-communist-youth-union/faculity.model';
-import { FaculityService } from 'src/app/book-communist-youth-union/faculity.service';
+import { Faculity } from 'src/app/book/faculity.model';
+import { FaculityService } from 'src/app/book/faculity.service';
 
 @Component({
   selector: 'so-doan-da-duoc-duyet',

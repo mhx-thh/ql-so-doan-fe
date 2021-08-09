@@ -6,6 +6,7 @@ export interface Book {
   YB: string;
   Faculity: string;
   Phone: string;
+  Email: string;
   IC: string;
   DJU: Date;
   DJCP: Date;

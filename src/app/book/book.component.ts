@@ -1,18 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { BookService } from './book-communist-youth-union.service';
+import { BookService } from './book';
 import { Class } from './class.model';
 import { ClassService } from './class.service';
 import { Faculity } from './faculity.model';
 import { FaculityService } from './faculity.service';
-import { Book } from './book-communist-youth-union.model.component';
+import { Book } from './book.model';
 
 @Component({
   selector: 'app-add-book',
-  templateUrl: './book-communist-youth-union.component.html',
+  templateUrl: './book.component.html',
 })
-export class BookCommunistYouthUnionComponent implements OnInit, OnDestroy {
+export class BookComponent implements OnInit, OnDestroy {
   constructor(
     public faculitiesService: FaculityService,
     public classesService: ClassService,
@@ -28,10 +28,8 @@ export class BookCommunistYouthUnionComponent implements OnInit, OnDestroy {
   classes: Class[] = [];
 
   ngOnInit() {
-    //ngOnInit là khi khởi tạo sẽ get ds khoa lun
-    this.getFaculities();  //1
+    this.getFaculities();
   }
-  //2
   getFaculities(): void {
     this.faculitiesService.getFaculities().subscribe(
       faculities => {
@@ -62,6 +60,7 @@ export class BookCommunistYouthUnionComponent implements OnInit, OnDestroy {
       YB: formData.class,
       Faculity: formData.faculity,
       Phone: formData.phonenumber,
+      Email: formData.email,
       IC: formData.idcard,
       DJU: formData.ngayVaoDoan,
       DJCP: formData.ngayVaoDang,

@@ -36,7 +36,6 @@ import { PartnerinfoPackageComponent } from './partnerinfo/partnerinfo-package/p
 import { PartnerinfoPostComponent } from './partnerinfo/partnerinfo-post/partnerinfo-post.component';
 import { PartnerinfoStatisticComponent } from './partnerinfo/partnerinfo-statistic/partnerinfo-statistic.component';
 import { PartnerinfoStatisticRowComponent } from './partnerinfo/partnerinfo-statistic/partnerinfo-statistic--row/partnerinfo-statistic--row.component';
-import { BookCommunistYouthUnionComponent } from './book-communist-youth-union/book-communist-youth-union.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomepageComponent } from './home-page/homepage.component';
 import { IntroComponent } from './intro/intro.component';
@@ -49,6 +48,8 @@ import { QuanLyChuyenDoanVien } from './admin/quan-ly-chuyen-doan-vien/quan-ly-c
 import { QuanLyKhoaVaChiDoan } from './admin/quan-ly-khoa-va-chi-doan/quan-ly-khoa-va-chi-doan.component';
 import { QuanLyViTri } from './admin/quan-ly-vi-tri/quan-ly-vi-tri.component';
 import { SoDoanDaDuocDuyet } from './admin/so-doan-da-duoc-duyet/so-doan-da-duoc-duyet.component';
+import { BookComponent } from './book/book.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -74,7 +75,7 @@ import { SoDoanDaDuocDuyet } from './admin/so-doan-da-duoc-duyet/so-doan-da-duoc
     PartnerinfoPostComponent,
     PartnerinfoStatisticComponent,
     PartnerinfoStatisticRowComponent,
-    BookCommunistYouthUnionComponent,
+    BookComponent,
     //admin
     AdminComponent,
     IntroComponent,
@@ -108,7 +109,8 @@ import { SoDoanDaDuocDuyet } from './admin/so-doan-da-duoc-duyet/so-doan-da-duoc
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    DatePipe
   ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorComponent]

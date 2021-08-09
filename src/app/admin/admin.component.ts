@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { FaculityService } from './admin.service';
-import { Faculity } from './faculity.model';
+import { Faculity } from '../book/faculity.model';
 
 @Component({
   selector: 'app-admin',
