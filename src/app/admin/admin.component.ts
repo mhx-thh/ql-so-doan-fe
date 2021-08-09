@@ -85,4 +85,8 @@ export class AdminComponent implements OnInit {
     this.screen = 'lichSuViTriSo';
     //console.log(this.screen);
   }
+  onSoDoanDaDuocDuyet(){
+    this.screen = 'soDoanDaDuocDuyet';
+    //console.log(this.screen);
+  }
 }

@@ -483,6 +483,6 @@ body {
     border-right: none;
 }
 
-.pheDuyetSoDoan{
+.pheDuyetSoDoan, .lichSuViTriSo, .quanLyChuyenDoanVien, .quanLyKhoaVaChiDoan, .quanLyViTri, .soDoanDaDuocDuyet{
   padding: 0px 0px !important;
 }
