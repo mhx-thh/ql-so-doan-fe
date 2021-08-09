@@ -9,6 +9,7 @@ import { IntroComponent } from './intro/intro.component';
 import { RulesComponent } from './rules/rules.component';
 import { AdminComponent } from './admin/admin.component';
 import { BookCommunistYouthUnionComponent } from './book-communist-youth-union/book-communist-youth-union.component';
+import { HiStudentComponent } from './hi-student/hi-student.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'intro', component: IntroComponent },
   { path: 'rule', component: RulesComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'addBook', component: BookCommunistYouthUnionComponent}
+  { path: 'addBook', component: BookCommunistYouthUnionComponent},
+  { path: 'student', component: HiStudentComponent},
 
 ];
 

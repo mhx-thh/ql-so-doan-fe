@@ -42,10 +42,12 @@ import { HomepageComponent } from './home-page/homepage.component';
 import { IntroComponent } from './intro/intro.component';
 import { RulesComponent } from './rules/rules.component';
 import { HeaderInsideComponent } from './header-inside/header-inside.component';
+import { HiStudentComponent } from './hi-student/hi-student.component';
 
 
 @NgModule({
   declarations: [
+    HiStudentComponent,
     HeaderInsideComponent,
     AppComponent,
     HeaderComponent,

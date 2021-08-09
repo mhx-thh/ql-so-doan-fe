@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import * as $ from 'jquery';
 import { Subscription } from 'rxjs';
 
 import { AuthService } from './auth/auth.service';
@@ -37,6 +38,19 @@ export class AppComponent implements OnInit, OnDestroy{
       .subscribe((username) => {
         this.username = username;
       });
+
+    // ui
+    $(document).ready(function() {
+
+      // navbarDropdown
+      if ($(window).width() < 992) {
+        $('.main-nav .dropdown-toggle').on('click', function () {
+          $(this).siblings('.dropdown-menu').animate({
+            height: 'toggle'
+          }, 300);
+        });
+      }
+    });
 
   }
   ngOnDestroy() {
