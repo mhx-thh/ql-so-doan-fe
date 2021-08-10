@@ -1,0 +1,65 @@
+  <div class="container-fluid">
+    <h2>Phê duyệt sổ Đoàn</h2>
+    <hr>
+    <div>
+      <div class="row mb-4">
+
+        <div class="col-md-12">
+          <div class="card border-0 rounded-0">
+            <div class="card-title mb-1 p-3">
+              <h5>Basic table</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive-md">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">MSSV</th>
+                      <th scope="col">Tên</th>
+                      <th scope="col">Ngày sinh</th>
+                      <th scope="col">Giới tính</th>
+                      <th scope="col">Chi Đoàn</th>
+                      <th scope="col">Khoa</th>
+                      <th scope="col">SĐT</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Ngày vào Đoàn</th>
+                      <th scope="col">Ngày vào Đảng</th>
+                      <th scope="col">Cán bộ Đoàn THPT</th>
+                      <th scope="col">Cán bộ lớp THPT</th>
+                      <th scope="col">Năng khiếu</th>
+                      <th scope="col">Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let book of books">
+                      <th scope="row">{{book.SID}}</th>
+                      <td>{{book.Name}}</td>
+                      <td>{{book.DOB | date:'dd/MM/yyyy'}}</td>
+                      <td>{{book.Gender}}</td>
+                      <td>{{book.Class}}</td>
+                      <td>{{book.Faculty}}</td>
+                      <td>{{book.Phone}}</td>
+                      <td>{{book.Email}}</td>
+                      <td>{{book.DJU | date:'dd/MM/yyyy'}}</td>
+                      <td>{{book.DJCP | date:'dd/MM/yyyy'}}</td>
+                      <td>{{book.PositionHSU}}</td>
+                      <td>{{book.ClassOfficePosition}}</td>
+                      <td>{{book.Gender}}</td>
+                      <td>
+                        <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                          <i class="fa fa-check"></i>
+                        </a>
+                        <a class="btn btn-sm btn-outline-lightning rounded-0">
+                          <i class="far fa-trash-alt"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

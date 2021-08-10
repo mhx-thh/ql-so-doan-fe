@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { FaculityService } from './admin.service';
-import { Faculity } from './faculity.model';
+import { Faculity } from '../book/faculity.model';
 
 @Component({
   selector: 'app-admin',
@@ -83,6 +83,10 @@ export class AdminComponent implements OnInit {
   }
   onLichSuViTriSo(){
     this.screen = 'lichSuViTriSo';
+    //console.log(this.screen);
+  }
+  onSoDoanDaDuocDuyet(){
+    this.screen = 'soDoanDaDuocDuyet';
     //console.log(this.screen);
   }
 }
