@@ -22,20 +22,6 @@ import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FooterComponent } from './footer/footer.component';
-import { PartnerComponent } from './partner/partner.component';
-import { PartnerinfoAccountComponent } from './partnerinfo/partnerinfo-account/partnerinfo-account.component';
-import { PartnerinfoComponent } from './partnerinfo/partnerinfo.component';
-import { ProductComponent } from './product/product.component';
-import { PartnerinfoSidebarComponent } from './partnerinfo/partnerinfo-sidebar/partnerinfo-sidebar.component';
-import { PartnerinfoStatusDateComponent } from './partnerinfo/partnerinfo-status/partnerinfo-status--date/partnerinfo-status--date.component';
-import { PartnerinfoStatusEventComponent } from './partnerinfo/partnerinfo-status/partnerinfo-status--event/partnerinfo-status--event.component';
-import { PartnerinfoStatusComponent } from './partnerinfo/partnerinfo-status/partnerinfo-status.component';
-import { PartnerinfoManageRowComponent } from './partnerinfo/partnerinfo-manage/partnerinfo-manage--row/partnerinfo-manage--row.component';
-import { PartnerinfoManageComponent } from './partnerinfo/partnerinfo-manage/partnerinfo-manage.component';
-import { PartnerinfoPackageComponent } from './partnerinfo/partnerinfo-package/partnerinfo-package.component';
-import { PartnerinfoPostComponent } from './partnerinfo/partnerinfo-post/partnerinfo-post.component';
-import { PartnerinfoStatisticComponent } from './partnerinfo/partnerinfo-statistic/partnerinfo-statistic.component';
-import { PartnerinfoStatisticRowComponent } from './partnerinfo/partnerinfo-statistic/partnerinfo-statistic--row/partnerinfo-statistic--row.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomepageComponent } from './home-page/homepage.component';
 import { IntroComponent } from './intro/intro.component';
@@ -60,21 +46,7 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     ErrorComponent,
     FooterComponent,
-    PartnerComponent,
-    ProductComponent,
-    PartnerinfoComponent,
-    PartnerinfoSidebarComponent,
-    PartnerinfoAccountComponent,
     HomepageComponent,
-    PartnerinfoStatusDateComponent,
-    PartnerinfoStatusEventComponent,
-    PartnerinfoStatusComponent,
-    PartnerinfoManageRowComponent,
-    PartnerinfoManageComponent,
-    PartnerinfoPackageComponent,
-    PartnerinfoPostComponent,
-    PartnerinfoStatisticComponent,
-    PartnerinfoStatisticRowComponent,
     BookComponent,
     //admin
     AdminComponent,
