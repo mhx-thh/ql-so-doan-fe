@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import { FaculityService } from './admin.service';
+import { AdminService } from './admin.service';
 import { Faculity } from '../book/faculity.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { Faculity } from '../book/faculity.model';
 })
 export class AdminComponent implements OnInit {
   constructor(
-    public faculitiesService: FaculityService,
+    public adminService: AdminService,
   ) { }
 
   username = '';
@@ -53,15 +53,7 @@ export class AdminComponent implements OnInit {
     });
     this.username = localStorage.getItem("username");
     this.typeAccount = localStorage.getItem("typeAccount");
-    this.getFaculities();
     this.screen = 'pheDuyetSoDoan';
-  }
-
-  getFaculities(): void {
-    this.faculitiesService.getFaculities().subscribe(
-      faculities => {
-        this.faculities = faculities;
-      });
   }
 
   onPheDuyetSoDoan(){

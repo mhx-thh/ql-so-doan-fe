@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/book/book.model';
 import { BookService } from 'src/app/book/book';
 import { DatePipe } from '@angular/common';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'phe-duyet-so-doan',
@@ -12,7 +13,8 @@ export class PheDuyetSoDoan implements OnInit {
 
   constructor(
     public booksService: BookService,
-    public datepipe: DatePipe
+    public datepipe: DatePipe,
+    public adminService: AdminService
   ) { }
 
   ngOnInit(): void {
@@ -26,5 +28,8 @@ export class PheDuyetSoDoan implements OnInit {
       Response => {
         this.books = Response;
       });
+  }
+  approval(MSSV: string){
+    this.adminService.approval(MSSV);
   }
 }

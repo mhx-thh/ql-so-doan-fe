@@ -51,49 +51,6 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
-  createUser(email: string, password: string) {
-    const AuthData: AuthData = { email: email, password: password };
-    this.http.post(BACKEND_URL + "signup", AuthData)
-      .subscribe(() => {
-        this.router.navigate(['/homepage']);
-      }, error => {
-        this.authStatusListener.next(false);
-      });
-  }
-
-  createCustomer(CEmail: string, CPassword: string, CName: string, CPhoneNumber: string, CGender: string) {
-    const AuthCustomerData: AuthCustomerData = { CEmail: CEmail, CPassword: CPassword, CName: CName, CPhoneNumber: CPhoneNumber, CGender: CGender, CAddress: null, SPID: "1" };
-    this.http.post(BACKEND_URL + "customerSignup", AuthCustomerData)
-      .subscribe(() => {
-        this.router.navigate(['/homepage']);
-      }, error => {
-        this.authStatusListener.next(false);
-      });
-  }
-
-  updateCustomer(CEmail: string, CName: string, CPhoneNumber: string, CGender: string) {
-    this.http.post<{name: string, phonenumber: string, gender: string}>(BACKEND_URL + "updateCustomer", {email: CEmail, name: CName, phonenumber: CPhoneNumber, gender: CGender})
-      .subscribe((respone) => {
-        this.username = respone.name;
-        alert("Cập nhật thành công! Quý khách vui lòng đăng nhập lại!");
-        this.router.navigate(['/userinside']);
-      }, error => {
-        this.authStatusListener.next(false);
-      });
-  }
-
-  createDeliveryCompany(DCEmail: string, DCPassword: string, DCName: string, DCPhoneNumber: string) {
-    const AuthDeliveryCompanyData: AuthDeliveryCompanyData = { DCEmail: DCEmail, DCPassword: DCPassword, DCName: DCName, DCPhoneNumber: DCPhoneNumber, DCAddress: null, SPID: "2", DCLicennses: null };
-    this.http.post(BACKEND_URL + "deliveryCompanySignup", AuthDeliveryCompanyData)
-      .subscribe(() => {
-        this.router.navigate(['/homepage']);
-      }, error => {
-        this.authStatusListener.next(false);
-      });
-  }
-
-
-
   login(email: string, password: string) {
     const AuthData: AuthData = { email: email, password: password };
     this.http.post<{ token: string, expiresIn: number , username: string, email: string, typeAccount: string}>(BACKEND_URL + 'login', AuthData)
