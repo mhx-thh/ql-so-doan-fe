@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/book/book.model';
-import { BookService } from 'src/app/book/book';
+import { BookService } from 'src/app/book/book.service';
 import { DatePipe } from '@angular/common';
 import { AdminService } from '../admin.service';
 

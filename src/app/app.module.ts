@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
@@ -36,7 +36,6 @@ import { QuanLyViTri } from './admin/quan-ly-vi-tri/quan-ly-vi-tri.component';
 import { SoDoanDaDuocDuyet } from './admin/so-doan-da-duoc-duyet/so-doan-da-duoc-duyet.component';
 import { BookComponent } from './book/book.component';
 import { DatePipe } from '@angular/common';
-
 
 @NgModule({
   declarations: [
@@ -75,9 +74,11 @@ import { DatePipe } from '@angular/common';
     MatSelectModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

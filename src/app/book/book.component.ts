@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { BookService } from './book';
+import { BookService } from './book.service';
 import { Class } from './class.model';
 import { ClassService } from './class.service';
 import { Faculity } from './faculity.model';
