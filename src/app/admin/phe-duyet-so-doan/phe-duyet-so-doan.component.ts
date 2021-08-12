@@ -31,5 +31,6 @@ export class PheDuyetSoDoan implements OnInit {
   }
   approval(MSSV: string){
     this.adminService.approval(MSSV);
+    document.getElementById(MSSV).style.display = "none";
   }
 }

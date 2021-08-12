@@ -23,4 +23,8 @@ export class BookService {
   getNotApprovalBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(BACKEND_URL + 'notApproval').pipe();
   }
+
+  getApprovalBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(BACKEND_URL + 'approval').pipe();
+  }
 }

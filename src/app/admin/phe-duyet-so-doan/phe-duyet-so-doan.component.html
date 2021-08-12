@@ -31,7 +31,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let book of books">
+                    <tr *ngFor="let book of books" id={{book.SID}}>
                       <th scope="row">{{book.SID}}</th>
                       <td>{{book.Name}}</td>
                       <td>{{book.DOB | date:'dd/MM/yyyy'}}</td>
@@ -54,6 +54,7 @@
                         </a>
                       </td>
                     </tr>
+
                   </tbody>
                 </table>
               </div>

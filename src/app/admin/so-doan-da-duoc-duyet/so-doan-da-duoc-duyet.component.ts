@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Faculity } from 'src/app/book/faculity.model';
-import { FaculityService } from 'src/app/book/faculity.service';
+import { Book } from 'src/app/book/book.model';
+import { BookService } from 'src/app/book/book.service';
+import { DatePipe } from '@angular/common';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'so-doan-da-duoc-duyet',
@@ -8,14 +10,21 @@ import { FaculityService } from 'src/app/book/faculity.service';
   styleUrls: ['./so-doan-da-duoc-duyet.component.css']
 })
 export class SoDoanDaDuocDuyet implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
   constructor(
-    public faculitiesService: FaculityService,
+    public booksService: BookService,
+    public datepipe: DatePipe,
+    public adminService: AdminService
   ) { }
 
-  username = '';
-  typeAccount = '';
-  faculities: Faculity[] = [];
+  ngOnInit(): void {
+    this.getApprovalBooks();
+  }
+
+  books: Book[] = [];
+  getApprovalBooks(): void {
+    this.booksService.getApprovalBooks().subscribe(
+      Response => {
+        this.books = Response;
+      });
+  }
 }
