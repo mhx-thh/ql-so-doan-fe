@@ -86,7 +86,7 @@ import { DatePipe } from '@angular/common';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     DatePipe,
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LfhgigcAAAAAOVkZjMk6D2wnRuoYDyo3OPB1qe0" }
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: process.env. }
   ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorComponent]

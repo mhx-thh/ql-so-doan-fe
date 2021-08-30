@@ -5,7 +5,8 @@
 export const environment = {
   production: true,
   //apiUrl: 'https://sodoanbackend.herokuapp.com/api'
-  apiUrl: 'http://localhost:3000/api'
+  apiUrl: 'http://localhost:3000/api',
+  RECAPTCHASITEKEY: '6LfhgigcAAAAAOVkZjMk6D2wnRuoYDyo3OPB1qe0'
 };
 
 /*
