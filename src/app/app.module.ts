@@ -15,6 +15,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 
+import { environment } from '../environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -86,7 +88,7 @@ import { DatePipe } from '@angular/common';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     DatePipe,
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: process.env.RECAPTCHASITEKEY }
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.RECAPTCHASITEKEY }
   ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorComponent]

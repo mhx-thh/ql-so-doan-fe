@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { HttpClient } from '@angular/common/http';
-import * as bootstrap from 'bootstrap';
 
 import { environment } from '../../environments/environment';
 import { BookService } from './book.service';
