@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -78,12 +79,14 @@ import { DatePipe } from '@angular/common';
     MatCheckboxModule,
     MatSidenavModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaV3Module
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    DatePipe
+    DatePipe,
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LfhgigcAAAAAOVkZjMk6D2wnRuoYDyo3OPB1qe0" }
   ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorComponent]

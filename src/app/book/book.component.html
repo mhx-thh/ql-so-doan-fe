@@ -1,4 +1,27 @@
-<form (submit)="onAddBook(addBookForm)" #addBookForm="ngForm" ngNativeValidate>
+<div class="modal fade" id="ThongBaoQuaTrinhThemSoDoan" tabindex="-1" role="dialog"
+  aria-labelledby="XuatBienNhanModelLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body" *ngIf="step==1">
+        Đang xử lý...
+      </div>
+      <div style="display: flex; justify-content: center;" *ngIf="step==1">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div class="modal-body" *ngIf="step==2">
+        Bạn đã gửi yêu cầu thành công và đang đợi xét duyệt!
+      </div>
+      <div class="modal-body" *ngIf="step==-1">
+        Invalid captcha!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="step==2||step==-1"
+          (click)="closeForm()">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+<form (submit)="onAddBook(addBookForm)" #addBookForm="ngForm" ngNativeValidate id="addBookForm">
   <section class="form-border section">
     <div class="container">
       <div class="row">
@@ -16,21 +39,22 @@
                 <h3>Khai báo sổ đoàn</h3>
               </div>
               <h5 class="">Thông tin chung</h5>
-              <input ngModel class="form-control main" name="name" type="text" placeholder="Nhập họ và tên" required>
+              <input ngModel class="form-control main" name="name" type="text" placeholder="Nhập họ và tên" required
+                id="name">
               <div class="row">
                 <div class="col-md-6 col-12">
                   <label class="form-check-label">
                     Mã số sinh viên
                   </label>
                   <input ngModel class="form-control main" name="studentID" type="number" placeholder="Nhập MSSV"
-                    required>
+                    id="studentID" required>
                 </div>
                 <div class="col-md-6 col-12">
                   <label class="form-check-label">
                     Ngày vào Đoàn
                   </label>
                   <input ngModel class="form-control main" name="ngayVaoDoan" type="date" placeholder="Ngày vào Đoàn"
-                    required>
+                    id="ngayVaoDoan" required>
                 </div>
               </div>
               <div class="row">
@@ -39,14 +63,14 @@
                     Ngày sinh
                   </label>
                   <input ngModel class="form-control main" name="birthday" type="date" placeholder="Ngày tháng năm sinh"
-                    required>
+                    id="birthday" required>
                 </div>
                 <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label class="form-check-label">
                       Giới tính
                     </label>
-                    <select ngModel name="gender" class="form-control main" required>
+                    <select ngModel name="gender" class="form-control main" required id="gender">
                       <option value="Nam" selected>Nam</option>
                       <option value="Nữ">Nữ</option>
                       <option value="Khác">Khác</option>
@@ -61,7 +85,7 @@
                   <div class="form-group">
                     <label class="form-check-label">Khoa</label>
                     <select ngModel class="form-control main" name="faculity" #facultySelect
-                      (change)='onfacultySelectChange(facultySelect.value)'>
+                      (change)='onfacultySelectChange(facultySelect.value)' id="faculty">
                       <option *ngFor="let faculity of faculities" value="{{faculity.name}}">
                         {{faculity.name}}</option>
                     </select>
@@ -70,7 +94,7 @@
                 <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label>Chi đoàn</label>
-                    <select ngModel name="class" class="form-control main" required>
+                    <select ngModel name="class" class="form-control main" id="class">
                       <option class="class-item" *ngFor="let class of classes" value="{{class.id}}">{{class.id}}
                       </option>
                     </select>
@@ -80,9 +104,11 @@
 
               <h5 class="">Thông tin Cá nhân</h5>
               <input ngModel class="form-control main" name="phonenumber" type="text" placeholder="Số điện thoại"
-                required>
-              <input ngModel class="form-control main" name="email" type="email" placeholder="Email" required>
-              <input ngModel class="form-control main" name="idcard" type="number" placeholder="Số CCCD/CMND" required>
+                id="phonenumber" required>
+              <input ngModel class="form-control main" name="email" type="email" placeholder="Email" required
+                id="email">
+              <input ngModel class="form-control main" name="idcard" type="number" placeholder="Số CCCD/CMND" required
+                id="idcard">
               <div class="row">
                 <div class="col-md-6 col-12">
                   <div class="form-control main form-check">
@@ -94,7 +120,7 @@
                 </div>
                 <div class="col-md-6 col-12">
                   <input *ngIf="laDangVien" ngModel class="form-control main" name="ngayVaoDang" value="2019-03-26"
-                    type="date" placeholder="Ngày vào Đảng" required>
+                    type="date" placeholder="Ngày vào Đảng" required id="ngayVaoDang">
                 </div>
               </div>
               <div class="row">
@@ -108,7 +134,7 @@
                 </div>
                 <div class="col-md-6 col-12">
                   <input *ngIf="laCanBoDoan" ngModel class="form-control main" name="chucVuCanBoDoan" type="text"
-                    placeholder="Nhập chức vụ" required>
+                    placeholder="Nhập chức vụ" required id="chucVuCanBoDoan">
                 </div>
               </div>
               <div class="row">
@@ -122,11 +148,11 @@
                 </div>
                 <div class="col-md-6 col-12">
                   <input *ngIf="laCanBoLop" ngModel class="form-control main" name="chucVuCanBoLop" type="text"
-                    placeholder="Nhập chức vụ" required>
+                    id="chucVuCanBoLop" placeholder="Nhập chức vụ" required>
                 </div>
               </div>
               <textarea ngModel class="form-control main" name="talent" type="text" rows="10"
-                placeholder="Các năng khiếu sở trường ..." required></textarea>
+                placeholder="Các năng khiếu sở trường ..." id="talent"></textarea>
               <!-- Submit Button -->
               <button class="btn btn-main-sm">Khai báo</button>
             </div>
