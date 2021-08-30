@@ -47,6 +47,7 @@
     "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
     "mongoose": "^5.13.5",
     "mongoose-unique-validator": "^2.0.3",
     "ng-recaptcha": "^8.0.1",

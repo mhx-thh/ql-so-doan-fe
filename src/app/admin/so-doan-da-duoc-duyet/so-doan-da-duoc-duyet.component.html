@@ -18,20 +18,20 @@
                     <!-- Content -->
                     <div class="content text-center">
                       <h5 class="">Thông tin chung</h5>
-                      <input ngModel class="form-control main" name="name" type="text" placeholder="Nhập họ và tên" required>
+                      <input id="name" ngModel class="form-control main" name="name" type="text" required>
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <label class="form-check-label">
                             Mã số sinh viên
                           </label>
-                          <input ngModel class="form-control main" name="studentID" type="number" placeholder="Nhập MSSV"
+                          <input id="studentID" ngModel class="form-control main" name="studentID" type="number" placeholder="Nhập MSSV"
                             required>
                         </div>
                         <div class="col-md-6 col-12">
                           <label class="form-check-label">
                             Ngày vào Đoàn
                           </label>
-                          <input ngModel class="form-control main" name="ngayVaoDoan" type="date" placeholder="Ngày vào Đoàn"
+                          <input id="ngayVaoDoan" ngModel class="form-control main" name="ngayVaoDoan" type="date" placeholder="Ngày vào Đoàn"
                             required>
                         </div>
                       </div>
@@ -195,8 +195,7 @@
                     <td>{{book.ClassOfficePosition}}</td>
                     <td>{{book.Gender}}</td>
                     <td>
-                      <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2" data-toggle="modal"
-                        data-target="#SuaSoDoan">
+                      <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2" (click)="onChangeEditBook(book)">
                         <i class="fa fa-edit"></i>
                       </a>
                       <a class="btn btn-sm btn-outline-lightning rounded-0">

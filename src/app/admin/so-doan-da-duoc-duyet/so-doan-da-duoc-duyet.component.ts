@@ -8,6 +8,7 @@ import { ClassService } from 'src/app/book/class.service';
 import { Faculity } from 'src/app/book/faculity.model';
 import { Class } from 'src/app/book/class.model';
 import { NgForm } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'so-doan-da-duoc-duyet',
@@ -41,9 +42,9 @@ export class SoDoanDaDuocDuyet implements OnInit {
         this.faculities = faculities;
       });
   }
-
   step : number = 1;
   books: Book[] = [];
+  selectedBook: Book;
   getApprovalBooks(): void {
     this.booksService.getApprovalBooks().subscribe(
       Response => {
@@ -83,6 +84,16 @@ export class SoDoanDaDuocDuyet implements OnInit {
       Approval: null,
     }
     //this.booksService.addBook(book);
+  }
+  onChangeEditBook(book: Book){
+    //await this.selectedBook = book;
+    $("#name").val( book.Name );
+    $("#studentID").val( book.SID );
+    let ngayVaoDoan = moment(book.DJU).format('YYYY-MM-DD');
+    //console.log(ngayVaoDoan);
+    $("#ngayVaoDoan").val( ngayVaoDoan );
+    ($('#SuaSoDoan') as any).modal('show');
+    //var myBookId = $(this).data('id');
   }
 
 }
