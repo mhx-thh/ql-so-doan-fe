@@ -84,7 +84,7 @@
                 <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label class="form-check-label">Khoa</label>
-                    <select ngModel class="form-control main" name="faculity" #facultySelect
+                    <select ngModel class="form-control main" name="faculty" #facultySelect
                       (change)='onfacultySelectChange(facultySelect.value)' id="faculty">
                       <option *ngFor="let faculity of faculities" value="{{faculity.name}}">
                         {{faculity.name}}</option>

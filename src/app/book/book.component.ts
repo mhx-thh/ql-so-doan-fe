@@ -69,7 +69,7 @@ export class BookComponent implements OnInit, OnDestroy {
       DOB: formData.birthday,
       Gender: formData.gender,
       Class: formData.class,
-      Faculty: formData.faculity,
+      Faculty: formData.faculty,
       Phone: formData.phonenumber,
       Email: formData.email,
       IC: formData.idcard,
@@ -80,6 +80,7 @@ export class BookComponent implements OnInit, OnDestroy {
       Talent: formData.talent,
       Approval: null,
     }
+    console.log(book);
     this.addBook(book);
   }
 
