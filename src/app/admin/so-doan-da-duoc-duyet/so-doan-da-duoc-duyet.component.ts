@@ -42,7 +42,7 @@ export class SoDoanDaDuocDuyet implements OnInit {
         this.faculities = faculities;
       });
   }
-  step : number = 1;
+  step: number = 1;
   books: Book[] = [];
   selectedBook: Book;
   getApprovalBooks(): void {
@@ -64,15 +64,15 @@ export class SoDoanDaDuocDuyet implements OnInit {
     this.faculities = [];
     this.classes = [];
   }
-  onAddBook(form: NgForm){
+  onAddBook(form: NgForm) {
     const formData = form.value;
     const book: Book = {
       SID: formData.studentID,
       Name: formData.name,
       DOB: formData.birthday,
       Gender: formData.gender,
-      YB: formData.class,
-      Faculity: formData.faculity,
+      Class: formData.class,
+      Faculty: formData.faculity,
       Phone: formData.phonenumber,
       Email: formData.email,
       IC: formData.idcard,
@@ -85,13 +85,17 @@ export class SoDoanDaDuocDuyet implements OnInit {
     }
     //this.booksService.addBook(book);
   }
-  onChangeEditBook(book: Book){
+  onChangeEditBook(book: Book) {
     //await this.selectedBook = book;
-    $("#name").val( book.Name );
-    $("#studentID").val( book.SID );
+    $("#name").val(book.Name);
+    $("#studentID").val(book.SID);
     let ngayVaoDoan = moment(book.DJU).format('YYYY-MM-DD');
-    //console.log(ngayVaoDoan);
-    $("#ngayVaoDoan").val( ngayVaoDoan );
+    let ngaySinh = moment(book.DOB).format('YYYY-MM-DD');
+    $("#ngayVaoDoan").val(ngayVaoDoan);
+    $('#birthday').val(ngaySinh);
+    $("#gender").val(book.Gender);
+    $("#faculty").val(book.Faculty);
+    $("#class").val(book.Class);
     ($('#SuaSoDoan') as any).modal('show');
     //var myBookId = $(this).data('id');
   }

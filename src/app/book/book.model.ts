@@ -3,8 +3,8 @@ export interface Book {
   Name: string;
   DOB: Date;
   Gender: string;
-  YB: string;
-  Faculity: string;
+  Class: string;
+  Faculty: string;
   Phone: string;
   Email: string;
   IC: string;
