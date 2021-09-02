@@ -51,9 +51,11 @@ export class SoDoanDaDuocDuyet implements OnInit {
         this.books = Response;
       });
   }
-  getClasses(selectedFaculity: string): void {
+  async getClasses(selectedFaculity: string) {
     this.classesService.getClasses(selectedFaculity).subscribe(
       classes => {
+        if (classes)
+          this.step = 2;
         this.classes = classes;
       });
   }
@@ -86,18 +88,25 @@ export class SoDoanDaDuocDuyet implements OnInit {
     //this.booksService.addBook(book);
   }
   onChangeEditBook(book: Book) {
-    //await this.selectedBook = book;
+    this.step = 1;
+    this.classesService.getClasses(book.Faculty).subscribe(
+      classes => {
+        this.classes = classes;
+      });
+    this.selectedBook = book;
+    ($('#SuaSoDoan') as any).modal('show');
+    console.log(this.selectedBook);
+    $("#faculty").val(book.Faculty);
+    //console.log(book.Class);
     $("#name").val(book.Name);
-    $("#studentID").val(book.SID);
+    //$("#studentID").val(book.SID);
     let ngayVaoDoan = moment(book.DJU).format('YYYY-MM-DD');
     let ngaySinh = moment(book.DOB).format('YYYY-MM-DD');
     $("#ngayVaoDoan").val(ngayVaoDoan);
     $('#birthday').val(ngaySinh);
     $("#gender").val(book.Gender);
-    $("#faculty").val(book.Faculty);
-    $("#class").val(book.Class);
-    ($('#SuaSoDoan') as any).modal('show');
-    //var myBookId = $(this).data('id');
+    $("#phonenumber").val(book.Phone);
+    $("#idcard").val(book.IC);
+    $("#email").val(book.Email);
   }
-
 }

@@ -8,8 +8,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <div style="display: flex; justify-content: center;" *ngIf="step==1">
+        <mat-spinner></mat-spinner>
+      </div>
       <div class="model-body">
-        <form (submit)="onAddBook(addBookForm)" #addBookForm="ngForm" ngNativeValidate>
+        <form (submit)="onAddBook(editBookForm)" #editBookForm="ngForm" ngNativeValidate id="editBookForm" >
           <section class="form-border section">
             <div class="container">
               <div class="row">
@@ -24,7 +27,7 @@
                           <label class="form-check-label">
                             Mã số sinh viên
                           </label>
-                          <input id="studentID" ngModel class="form-control main" name="studentID" type="number" placeholder="Nhập MSSV"
+                          <input ngModel id="studentID" class="form-control main" name="studentID" type="number" placeholder="Nhập MSSV"
                             required>
                         </div>
                         <div class="col-md-6 col-12">
@@ -72,8 +75,8 @@
                         <div class="col-md-6 col-12">
                           <div class="form-group">
                             <label>Chi đoàn</label>
-                            <select id="class" ngModel name="class" class="form-control main" required>
-                              <option class="class-item" *ngFor="let class of classes" value="{{class.id}}">{{class.id}}
+                            <select id="_class" ngModel NgSelectOption name="class" class="form-control main">
+                              <option class="class-item" *ngFor="let class of classes" ngValue="12345">{{class.id}}
                               </option>
                             </select>
                           </div>
@@ -81,10 +84,10 @@
                       </div>
 
                       <h5 class="">Thông tin Cá nhân</h5>
-                      <input ngModel class="form-control main" name="phonenumber" type="text" placeholder="Số điện thoại"
+                      <input id="phonenumber" ngModel class="form-control main" name="phonenumber" type="text" placeholder="Số điện thoại"
                         required>
-                      <input ngModel class="form-control main" name="email" type="email" placeholder="Email" required>
-                      <input ngModel class="form-control main" name="idcard" type="number" placeholder="Số CCCD/CMND" required>
+                      <input id="email" ngModel class="form-control main" name="email" type="email" placeholder="Email" required>
+                      <input id="idcard" ngModel class="form-control main" name="idcard" type="number" placeholder="Số CCCD/CMND" required>
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-control main form-check">
@@ -183,14 +186,14 @@
                   <tr *ngFor="let book of books">
                     <th scope="row" id="SID">{{book.SID}}</th>
                     <td>{{book.Name}}</td>
-                    <td>{{book.DOB | date:'dd/MM/yyyy'}}</td>
+                    <td>{{book.DOB | date:'MM/dd/yyyy'}}</td>
                     <td>{{book.Gender}}</td>
                     <td>{{book.Class}}</td>
                     <td>{{book.Faculty}}</td>
                     <td>{{book.Phone}}</td>
                     <td>{{book.Email}}</td>
-                    <td>{{book.DJU | date:'dd/MM/yyyy'}}</td>
-                    <td>{{book.DJCP | date:'dd/MM/yyyy'}}</td>
+                    <td>{{book.DJU | date:'MM/dd/yyyy'}}</td>
+                    <td>{{book.DJCP | date:'MM/dd/yyyy'}}</td>
                     <td>{{book.PositionHSU}}</td>
                     <td>{{book.ClassOfficePosition}}</td>
                     <td>{{book.Gender}}</td>
