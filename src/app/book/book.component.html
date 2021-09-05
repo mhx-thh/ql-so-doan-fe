@@ -133,8 +133,15 @@
                   </div>
                 </div>
                 <div class="col-md-6 col-12">
-                  <input *ngIf="laCanBoDoan" ngModel class="form-control main" name="chucVuCanBoDoan" type="text"
-                    placeholder="Nhập chức vụ" required id="chucVuCanBoDoan">
+                  <select *ngIf="laCanBoDoan" ngModel name="chucVuCanBoDoan" class="form-control main" id="chucVuCanBoDoan">
+                    <option value="Bí thư Đoàn trường">Bí thư Đoàn trường</option>
+                    <option value="Phó Bí thư Đoàn trường">Phó Bí thư Đoàn trường</option>
+                    <option value="UVBCH Đoàn trường">UVBCH Đoàn trường</option>
+                    <option value="Bí thư chi Đoàn">Bí thư chi Đoàn</option>
+                    <option value="Phó Bí thư chi Đoàn">Bí thư chi Đoàn</option>
+                    <option value="UVBCH chi Đoàn">UVBCH chi Đoàn</option>
+                    <option value="Khác">Khác</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
@@ -147,8 +154,11 @@
                   </div>
                 </div>
                 <div class="col-md-6 col-12">
-                  <input *ngIf="laCanBoLop" ngModel class="form-control main" name="chucVuCanBoLop" type="text"
-                    id="chucVuCanBoLop" placeholder="Nhập chức vụ" required>
+                  <select *ngIf="laCanBoLop" ngModel name="chucVuCanBoLop" class="form-control main" id="chucVuCanBoLop">
+                    <option value="Lớp trưởng">Lớp trưởng</option>
+                    <option value="Lớp phó">Lớp phó</option>
+                    <option value="Khác">Khác</option>
+                  </select>
                 </div>
               </div>
               <textarea ngModel class="form-control main" name="talent" type="text" rows="10"
