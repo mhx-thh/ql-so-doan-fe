@@ -81,7 +81,6 @@ import { DatePipe } from '@angular/common';
     MatCheckboxModule,
     MatSidenavModule,
     RouterModule,
-    ReactiveFormsModule,
     RecaptchaV3Module
   ],
   providers: [

@@ -55,6 +55,8 @@ export class BookComponent implements OnInit, OnDestroy {
       });
   }
   onfacultySelectChange(facultyName: string) {
+    console.log(this.faculities);
+
     this.getClasses(facultyName);
   };
   ngOnDestroy() {

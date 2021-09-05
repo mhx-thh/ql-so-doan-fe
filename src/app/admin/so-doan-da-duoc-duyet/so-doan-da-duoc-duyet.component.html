@@ -8,142 +8,120 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div style="display: flex; justify-content: center;" *ngIf="step==1">
+      <div style="display: flex; justify-content: center;" *ngIf="step==2">
         <mat-spinner></mat-spinner>
       </div>
-      <div class="model-body">
-        <form (submit)="onAddBook(editBookForm)" #editBookForm="ngForm" ngNativeValidate id="editBookForm" >
-          <section class="form-border section">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <div class="block">
-                    <!-- Content -->
-                    <div class="content text-center">
-                      <h5 class="">Thông tin chung</h5>
-                      <input id="name" ngModel class="form-control main" name="name" type="text" required>
-                      <div class="row">
-                        <div class="col-md-6 col-12">
-                          <label class="form-check-label">
-                            Mã số sinh viên
-                          </label>
-                          <input ngModel id="studentID" class="form-control main" name="studentID" type="number" placeholder="Nhập MSSV"
-                            required>
-                        </div>
-                        <div class="col-md-6 col-12">
-                          <label class="form-check-label">
-                            Ngày vào Đoàn
-                          </label>
-                          <input id="ngayVaoDoan" ngModel class="form-control main" name="ngayVaoDoan" type="date" placeholder="Ngày vào Đoàn"
-                            required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 col-12">
-                          <label class="form-check-label">
-                            Ngày sinh
-                          </label>
-                          <input id="birthday" ngModel class="form-control main" name="birthday" type="date" placeholder="Ngày tháng năm sinh"
-                            required>
-                        </div>
-                        <div class="col-md-6 col-12">
-                          <div class="form-group">
-                            <label class="form-check-label">
-                              Giới tính
-                            </label>
-                            <select id="gender" ngModel name="gender" class="form-control main" required>
-                              <option value="Nam" selected>Nam</option>
-                              <option value="Nữ">Nữ</option>
-                              <option value="Khác">Khác</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <h5 class="">Thông tin Chi đoàn</h5>
-                      <div class="row">
-                        <div class="col-md-6 col-12">
-                          <div class="form-group">
-                            <label class="form-check-label">Khoa</label>
-                            <select id="faculty" ngModel class="form-control main" name="faculity" #facultySelect
-                              (change)='onfacultySelectChange(facultySelect.value)'>
-                              <option *ngFor="let faculity of faculities" value="{{faculity.name}}">
-                                {{faculity.name}}</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                          <div class="form-group">
-                            <label>Chi đoàn</label>
-                            <select id="_class" ngModel NgSelectOption name="class" class="form-control main">
-                              <option class="class-item" *ngFor="let class of classes" ngValue="12345">{{class.id}}
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <h5 class="">Thông tin Cá nhân</h5>
-                      <input id="phonenumber" ngModel class="form-control main" name="phonenumber" type="text" placeholder="Số điện thoại"
-                        required>
-                      <input id="email" ngModel class="form-control main" name="email" type="email" placeholder="Email" required>
-                      <input id="idcard" ngModel class="form-control main" name="idcard" type="number" placeholder="Số CCCD/CMND" required>
-                      <div class="row">
-                        <div class="col-md-6 col-12">
-                          <div class="form-control main form-check">
-                            <input class="form-check-input" [(ngModel)]="laDangVien" type="checkbox" id="laDangVien">
-                            <label class="form-check-label" for="laDangVien">
-                              Là Đảng viên
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                          <input *ngIf="laDangVien" ngModel class="form-control main" name="ngayVaoDang" data-date-format="DD MMMM YYYY"
-                            type="date" placeholder="Ngày vào Đảng" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 col-12">
-                          <div class="form-control main form-check">
-                            <input class="form-check-input" [(ngModel)]="laCanBoDoan" type="checkbox" id="laCanBoDoan">
-                            <label class="form-check-label" for="laCanBoDoan">
-                              Là cán bộ chi Đoàn
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                          <input *ngIf="laCanBoDoan" ngModel class="form-control main" name="chucVuCanBoDoan" type="text"
-                            placeholder="Nhập chức vụ" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 col-12">
-                          <div class="form-control main form-check">
-                            <input class="form-check-input" [(ngModel)]="laCanBoLop" type="checkbox" id="laCanBoLop">
-                            <label class="form-check-label" for="laCanBoLop">
-                              Là cán bộ lớp
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                          <input *ngIf="laCanBoLop" ngModel class="form-control main" name="chucVuCanBoLop" type="text"
-                            placeholder="Nhập chức vụ" required>
-                        </div>
-                      </div>
-                      <input ngModel class="form-control main" name="talent" type="text" rows="10"
-                        placeholder="Các năng khiếu sở trường ..." required>
-                      <!-- Submit Button -->
-                    </div>
-                  </div>
-                </div>
+      <div class="model-body" *ngIf="step==1">
+        <form [formGroup]="editBookForm" (ngSubmit)="onEditBook()" ngNativeValidate id="editBookForm">
+          <div class="container">
+            <div class="row" style="flex-wrap: unset;">
+              <div class="col">
+                <label for="name">Họ và tên: </label>
+              </div>
+              <div class="col-9">
+                <input id="name" type="text" formControlName="name" class="form-control">
               </div>
             </div>
-          </section>
+            <div class="row">
+              <div class="col-sm">
+                <label for="sid">MSSV: </label>
+                <input id="sid" type="text" formControlName="sid" class="form-control" disabled>
+              </div>
+              <div class="col-sm">
+                <label for="ngayVaoDoan">Ngày vào Đoàn: </label>
+                <input id="ngayVaoDoan" type="date" formControlName="ngayVaoDoan" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="birthday">Ngày sinh: </label>
+                <input id="birthday" type="date" formControlName="birthday" class="form-control">
+              </div>
+              <div class="col-sm">
+                <label for="gender">Giới tính: </label>
+                <select formControlName="gender" class="form-control">
+                  <option *ngFor="let gender of genders" [ngValue]="gender.gender">{{gender.gender}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="faculty">Khoa: </label>
+                <select formControlName="faculty" class="form-control"
+                  (change)='onfacultySelectChange(facultySelect.value)' #facultySelect>
+                  <option *ngFor="let faculty of faculities" value="{{faculty.name}}">{{faculty.name}}</option>
+                </select>
+              </div>
+              <div class="col-sm">
+                <label for="class">Chi Đoàn: </label>
+                <select formControlName="class" class="form-control" ngModel>
+                  <option [ngValue]="'Không'">Không</option>
+                  <option *ngFor="let class of classes" [ngValue]="class.id">{{class.id}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="phone">Số điện thoại: </label>
+                <input id="phone" type="number" formControlName="phone" class="form-control">
+              </div>
+              <div class="col-sm">
+                <label for="email">Email: </label>
+                <input id="email" type="email" formControlName="email" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="idcard">CMND: </label>
+                <input id="idcard" type="number" formControlName="idcard" class="form-control">
+              </div>
+              <div class="col-sm">
+                <label for="ngayVaoDang">Ngày vào Đảng: </label>
+                <input id="ngayVaoDang" type="date" formControlName="ngayVaoDang" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="canBoLop">Chức vụ lớp ở THPT: </label>
+                <select ngModel name="canBoLop" class="form-control main" id="canBoLop">
+                  <option value="Lớp trưởng">Lớp trưởng</option>
+                  <option value="Lớp phó">Lớp phó</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+              <div class="col-sm">
+                <label for="canBoDoan">Chức vụ Đoàn ở THPT: </label>
+                <select ngModel name="canBoDoan" class="form-control main" id="canBoDoan">
+                  <option value="Bí thư Đoàn trường">Bí thư Đoàn trường</option>
+                  <option value="Phó Bí thư Đoàn trường">Phó Bí thư Đoàn trường</option>
+                  <option value="UVBCH Đoàn trường">UVBCH Đoàn trường</option>
+                  <option value="Bí thư chi Đoàn">Bí thư chi Đoàn</option>
+                  <option value="Phó Bí thư chi Đoàn">Bí thư chi Đoàn</option>
+                  <option value="UVBCH chi Đoàn">UVBCH chi Đoàn</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="flex-wrap: unset;">
+              <div class="col">
+                <label for="talent">Năng khiếu: </label>
+              </div>
+              <div class="col-9">
+                <input id="talent" type="text" formControlName="talent" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="step==1">Hủy</button>
+            <button type="submit" class="btn btn-primary" *ngIf="step==1">Xác nhận</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="step==3">Đóng</button>
+          </div>
         </form>
       </div>
+      <div style="display: flex; justify-content: center;" *ngIf="step==3">
+        Chỉnh sửa thành công!
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="step==1">Hủy</button>
-        <button (click)="approval(SID)" type="button" class="btn btn-primary" *ngIf="step==1">Xác nhận</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="step==3">Đóng</button>
       </div>
     </div>
@@ -174,31 +152,24 @@
                     <th scope="col">Khoa</th>
                     <th scope="col">SĐT</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Ngày vào Đoàn</th>
-                    <th scope="col">Ngày vào Đảng</th>
-                    <th scope="col">Cán bộ Đoàn THPT</th>
-                    <th scope="col">Cán bộ lớp THPT</th>
                     <th scope="col">Năng khiếu</th>
                     <th scope="col">Thao tác</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let book of books">
-                    <th scope="row" id="SID">{{book.SID}}</th>
-                    <td>{{book.Name}}</td>
-                    <td>{{book.DOB | date:'MM/dd/yyyy'}}</td>
-                    <td>{{book.Gender}}</td>
-                    <td>{{book.Class}}</td>
-                    <td>{{book.Faculty}}</td>
-                    <td>{{book.Phone}}</td>
-                    <td>{{book.Email}}</td>
-                    <td>{{book.DJU | date:'MM/dd/yyyy'}}</td>
-                    <td>{{book.DJCP | date:'MM/dd/yyyy'}}</td>
-                    <td>{{book.PositionHSU}}</td>
-                    <td>{{book.ClassOfficePosition}}</td>
-                    <td>{{book.Gender}}</td>
+                    <th scope="row" id="{{book.SID+'_sid'}}">{{book.SID}}</th>
+                    <td id="{{book.SID+'_name'}}">{{book.Name}}</td>
+                    <td id="{{book.SID+'_birthday'}}">{{book.DOB | date:'yyyy-MM-dd'}}</td>
+                    <td id="{{book.SID+'_gender'}}">{{book.Gender}}</td>
+                    <td id="{{book.SID+'_class'}}">{{book.Class}}</td>
+                    <td id="{{book.SID+'_faculty'}}">{{book.Faculty}}</td>
+                    <td id="{{book.SID+'_phone'}}">{{book.Phone}}</td>
+                    <td id="{{book.SID+'_email'}}">{{book.Email}}</td>
+                    <td id="{{book.SID+'_talent'}}">{{book.Talent}}</td>
                     <td>
-                      <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2" (click)="onChangeEditBook(book)">
+                      <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2" (click)="onChangeEditBook(book)"
+                        data-toggle="modal" data-target="#SuaSoDoan">
                         <i class="fa fa-edit"></i>
                       </a>
                       <a class="btn btn-sm btn-outline-lightning rounded-0">
