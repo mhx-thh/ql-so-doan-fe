@@ -7,33 +7,11 @@ function Login() {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const status = useAppSelector(selectStatus);
-  function loginGGClick() {
-    const baseURL =
-      process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5000";
-    const webURL = process.env.NEXT_PUBLIC_WEB_URL || "http://localhost:3000";
-    const googleLoginURL = `${baseURL}/api/v1/auth/google?url=${webURL}/login/cb`;
-    const newWindow = window.open(
-      googleLoginURL,
-      "_blank",
-      "width=500,height=600"
-    );
-    if (newWindow) {
-      const timer = setInterval(() => {
-        if (newWindow.closed) {
-          const token = localStorage.getItem("token");
-          if (timer) clearInterval(timer);
-          // dispatch to fetch user info
-          dispatch(getInfoAsync(token));
-          router.push("/");
-        }
-      });
-    }
-  }
   useEffect(() => {
     if (status === "logined") router.push("/");
     return;
   }, []);
-  const loginWithAccount = false;
+  const loginWithAccount = true;
   return (
     <div>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
@@ -41,15 +19,6 @@ function Login() {
           <div className="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">
             Login To Your Account
           </div>
-          <button
-            className="relative mt-6 border rounded-md py-2 text-sm text-gray-800 bg-gray-100 hover:bg-gray-200"
-            onClick={loginGGClick}
-          >
-            <span className="absolute left-0 top-0 flex items-center justify-center h-full w-10 text-blue-500">
-              <i className="fab fa-google" />
-            </span>
-            <span>Login with Google</span>
-          </button>
           {loginWithAccount && (
             <>
               <div className="relative mt-10 h-px bg-gray-300">
