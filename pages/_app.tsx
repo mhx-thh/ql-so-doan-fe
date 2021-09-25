@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { AppProps } from "next/app";
 import "../global.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { store } from "redux/store";
 import { Provider } from "react-redux";
 
@@ -33,7 +34,7 @@ const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <MegaLayout
-        title="R2us - Nền tảng chia sẻ tài liệu và cảm nhận dành riêng cho trường ĐH KHTN HCM"
+        title="YUS - Quản lý sổ đoàn trường ĐH KHTN HCM"
         desc="Mùa hè xanh 2021 - Đội hình Tin học hóa with hearts"
         icon="/icons/logo.svg"
       >

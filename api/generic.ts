@@ -3,7 +3,7 @@ import axios from "axios";
 export const baseURL =
   process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5000";
 
-export const apiV1 = `${baseURL}/api/v1`;
+export const apiV1 = `${baseURL}/api`;
 
 export const config = function (token: string) {
   return {
