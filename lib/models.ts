@@ -29,6 +29,8 @@ export type RequestModel = {
   Title: string;
   Content: string;
   Status: "init" | "done" | "doing";
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type HistoryModel = {
