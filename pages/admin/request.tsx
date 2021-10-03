@@ -4,9 +4,10 @@ import Swal from "sweetalert2";
 import AdminLayout from "components/layout/AdminLayout";
 import ViewRequest from "components/adminPage/ViewRequest";
 
-import requestApi from "api/bookApi";
+import requestApi from "api/configApi";
 
 import { RequestModel } from "lib/models";
+import { ConvertTime } from "components/ConvertTime";
 
 export default function Places() {
   const [requests, setRequests] = useState<Array<RequestModel>>([]);
@@ -27,11 +28,12 @@ export default function Places() {
       const data = res?.data?.data?.result;
       setRequests(data);
     } catch (error) {
+      Swal.fire("Đã xảy ra lỗi", "Something wrong !", "error");
       console.log(error.message);
     }
     Swal.close();
   }
-  async function editRequest(id: string, formValues: any) {
+  async function processRequest(id: string, formValues: RequestModel) {
     Swal.fire({
       title: "Đang thực thi",
       icon: "info",
@@ -41,8 +43,9 @@ export default function Places() {
       },
     });
     try {
-      // await requestApi.(id, formValues, "");
+      await requestApi.editRequest(id, formValues, "");
     } catch (error) {
+      Swal.fire("Đã xảy ra lỗi", "Something wrong !", "error");
       console.log(error.message);
     }
     Swal.close();
@@ -57,9 +60,10 @@ export default function Places() {
       },
     });
     try {
-      // await requestApi.delPlace(requests[index]._id, "");
+      await requestApi.delRequest(requests[index]._id, "");
     } catch (error) {
       console.log(error.message);
+      Swal.fire("Đã xảy ra lỗi", "Something wrong !", "error");
     }
     Swal.close();
   }
@@ -73,6 +77,7 @@ export default function Places() {
     setOpen(true);
   }
   function onProcessClick(index: number) {
+    setRequest({ ...requests[index], Status: "doing" });
     Swal.fire({
       title: "Bạn muốn xử lý Yêu cầu này",
       text: "Thao tác này giúp bạn đánh dấu là Yêu cầu đang được xử lý",
@@ -84,14 +89,15 @@ export default function Places() {
       cancelButtonText: "Hủy",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        // await delPlace(index);
-        // fetchPlaceList();
+        await processRequest(requests[index]._id, request);
+        fetchRequestList();
       }
     });
   }
   function onDoneClick(index: number) {
+    setRequest({ ...requests[index], Status: "done" });
     Swal.fire({
-      title: "Bạn đã hoàn thành Yêu cầy này",
+      title: "Bạn đã hoàn thành Yêu cầu này",
       text: "Thao tác này giúp bạn đánh dấu là Yêu cầu đã được hoàn thành",
       icon: "info",
       confirmButtonColor: "#d33",
@@ -101,11 +107,12 @@ export default function Places() {
       cancelButtonText: "Hủy",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        // await delPlace(index);
-        // fetchPlaceList();
+        await processRequest(requests[index]._id, request);
+        fetchRequestList();
       }
     });
   }
+
   function onDelClick(index: number) {
     Swal.fire({
       title: "Bạn có chắc chắn?",
@@ -118,8 +125,8 @@ export default function Places() {
       cancelButtonText: "Hủy",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        // await delRequest(index);
-        // await fetchRequestList();
+        await delRequest(index);
+        fetchRequestList();
       }
     });
   }
@@ -143,10 +150,13 @@ export default function Places() {
                 <table className="items-center w-full bg-transparent border-collapse">
                   <thead>
                     <tr>
-                      <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                      <th className="pl-7 text-left border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                        Ngày gửi
+                      </th>
+                      <th className="pl-12 text-left border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                         MSSV
                       </th>
-                      <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                      <th className="pl-12 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                         Loại
                       </th>
                       <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
@@ -162,19 +172,41 @@ export default function Places() {
                     {requests?.map((e, i) => {
                       return (
                         <tr key={i}>
-                          <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {ConvertTime(e.createdAt)}
+                          </td>
+                          <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap py-4 text-middle flex items-center">
                             <span className="ml-3 font-bold text-blueGray-600">
                               {e.Book?.SID}
                             </span>
                           </th>
                           <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {e.Type}
+                            {e.Type === "profile"
+                              ? "Cập nhập sổ đoàn"
+                              : e.Type === "chuyen_chi_doan"
+                              ? "Chuyển sổ đoàn"
+                              : "Rút sổ đoàn"}
                           </td>
                           <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                             {e.Title}
                           </td>
                           <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {e.Status}
+                            {e.Status === "init" ? (
+                              <div className="flex">
+                                <i className="fas fa-circle text-red-500 mr-2 mt-0.5" />
+                                <p>Chưa xử lí</p>
+                              </div>
+                            ) : e.Status === "doing" ? (
+                              <div className="flex">
+                                <i className="fas fa-circle text-orange-500 mr-2 mt-0.5" />
+                                <p>Đang xử lí</p>
+                              </div>
+                            ) : (
+                              <div className="flex">
+                                <i className="fas fa-circle text-green-500 mr-2 mt-0.5" />
+                                <p>Đã hoàn thành</p>
+                              </div>
+                            )}
                           </td>
                           <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
                             <div className="group inline-block">
@@ -191,18 +223,22 @@ export default function Places() {
                                 >
                                   Xem chi tiết
                                 </button>
-                                <button
-                                  onClick={() => onProcessClick(i)}
-                                  className="block w-full rounded-sm px-3 py-1 hover:bg-gray-100 hover:font-medium"
-                                >
-                                  Xử lý
-                                </button>
-                                <button
-                                  onClick={() => onDoneClick(i)}
-                                  className="block w-full rounded-sm px-3 py-1 hover:bg-gray-100 hover:font-medium"
-                                >
-                                  Hoàn thành
-                                </button>
+                                {e.Status === "init" && (
+                                  <button
+                                    onClick={() => onProcessClick(i)}
+                                    className="block w-full rounded-sm px-3 py-1 hover:bg-gray-100 hover:font-medium"
+                                  >
+                                    Xử lý
+                                  </button>
+                                )}
+                                {e.Status === "doing" && (
+                                  <button
+                                    onClick={() => onDoneClick(i)}
+                                    className="block w-full rounded-sm px-3 py-1 hover:bg-gray-100 hover:font-medium"
+                                  >
+                                    Hoàn thành
+                                  </button>
+                                )}
                                 <button
                                   onClick={() => onDelClick(i)}
                                   className="block w-full rounded-sm px-3 py-1 hover:bg-gray-100 hover:font-medium"
