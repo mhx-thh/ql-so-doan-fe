@@ -5,133 +5,33 @@ import Footer from "components/footer/FooterComponent";
 const TogglePage: FC = () => {
   return (
     <React.Fragment>
-      <div className="w-full flex items-center px-28 py-24 bg-indigo-50">
-        <div>
-          <p className="text-indigo-500 text-5xl leading-none font-extrabold tracking-tight">
-            YUS
-          </p>
-          <p className="text-black text-xl leading-8 font-semibold">
-            Hệ thống quản lý sổ đoàn trường ĐH Khoa học tự nhiên HCM
-          </p>
-          <p className="w-96 h-50 text-black text-base leading-6 font-normal pt-3"></p>
-          <div className="flex justify-between items-center w-96 mt-3.5 p-0">
-            <Link href="#">
-              <button className="w-48 h-10 bg-indigo-500 rounded-xl flex justify-center items-center mr-5">
-                <p className="text-lg text-white leading-6 font-semibold tracking-wider uppercase">
-                  Khai báo
-                </p>
-              </button>
-            </Link>
-            <button className="w-48 h-10 bg-indigo-500 rounded-xl flex justify-center items-center">
-              <p className="text-lg text-white leading-6 font-semibold tracking-wider uppercase">
-                Chia sẻ
-              </p>
+      <section className="text-blueGray-700 ">
+        <div className="container flex flex-col px-5 py-24 mx-auto lg:items-center">
+          <div className="flex flex-col w-full mb-12 text-left lg:text-center">
+            <h2 className="mb-4 text-xs font-semibold tracking-widest text-black uppercase title-font">
+              a great header right here
+            </h2>
+            <h1 className="mb-6 text-2xl font-semibold tracking-tighter text-black sm:text-5xl title-font">
+              {" "}
+              A centered <br className="md:hidden" /> medium length headline.
+            </h1>
+            <p className="mx-auto text-base font-medium leading-relaxed text-blueGray-700 lg:w-2/3">
+              You're about to launch soon and must be 100% focused on your
+              product. Don't loose precious days designing, coding the landing
+              page and testing .{" "}
+            </p>
+          </div>
+          <div className="flex justify-left lg:justify-center ">
+            <button className="flex items-center px-6 py-2 mt-auto mr-3 font-semibold text-blue-800 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-200 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              Button
+            </button>
+            <button className="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              Button
             </button>
           </div>
         </div>
-        <img src="picture/home.png" alt="home picture" />
-      </div>
-      {/* phần đặc điểm nổi bật */}
-      <div className="relative -mt-16 py-0 px-28 w-full text-center">
-        {/* // chữ đặc điểm nổi bật và cái khung */}
-        <div className="border w-8/12 h-96 inline-block bg-white shadow-xl mb-0 rounded-3xl">
-          <p className="text-indigo-500 text-2xl leading-7 font-bold indigo-500 text-center pt-14">
-            ĐẶC ĐIỂM NỔI BẬT
-          </p>
-        </div>
-        {/* toàn thể 3 đặc điểm */}
-        <div className="py-0 px-0 absolute bottom-14 flex justify-between items-center">
-          {/* đaẹđiểm thứ nhất */}
-          <div className="py-0 flex justify-around items-center mr-24">
-            {/* //đặc điểm thứ nhất */}
-            <div className="w-9/12 h-40 bg-indigo-300 rounded-2xl mr-8 pt-2 px-3.5">
-              <div className="p-0 mb-2 flex justify-start">
-                <svg
-                  width="52"
-                  height="52"
-                  viewBox="0 0 52 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="ic:outline-rate-review">
-                    <path
-                      id="Vector"
-                      d="M43.3333 4.33333H8.66665C6.28331 4.33333 4.35498 6.28333 4.35498 8.66666L4.33331 47.6667L13 39H43.3333C45.7166 39 47.6666 37.05 47.6666 34.6667V8.66666C47.6666 6.28333 45.7166 4.33333 43.3333 4.33333ZM43.3333 34.6667H11.2016L9.92331 35.945L8.66665 37.2017V8.66666H43.3333V34.6667ZM22.75 30.3333H39V26H27.0833L22.75 30.3333ZM31.1133 17.615C31.5466 17.1817 31.5466 16.51 31.1133 16.0767L27.2783 12.2417C26.845 11.8083 26.1733 11.8083 25.74 12.2417L13 24.9817V30.3333H18.3516L31.1133 17.615Z"
-                      fill="#6366F1"
-                    />
-                  </g>
-                </svg>
+      </section>
 
-                <p className="text-2xl leading-7 font-bold text-white ml-1.5 pt-2">
-                  Giao diện thân thiện
-                </p>
-              </div>
-              <p className="text-sm leading-5 font-medium text-black">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes{" "}
-              </p>
-            </div>
-            {/* đặc điểm thứ 2 */}
-            <div className="w-9/12 h-40 bg-indigo-300 rounded-2xl mr-8 pt-2 px-3.5">
-              <div className="p-0 mb-2 flex justify-start">
-                <svg
-                  width="52"
-                  height="52"
-                  viewBox="0 0 52 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="ic:outline-rate-review">
-                    <path
-                      id="Vector"
-                      d="M43.3333 4.33333H8.66665C6.28331 4.33333 4.35498 6.28333 4.35498 8.66666L4.33331 47.6667L13 39H43.3333C45.7166 39 47.6666 37.05 47.6666 34.6667V8.66666C47.6666 6.28333 45.7166 4.33333 43.3333 4.33333ZM43.3333 34.6667H11.2016L9.92331 35.945L8.66665 37.2017V8.66666H43.3333V34.6667ZM22.75 30.3333H39V26H27.0833L22.75 30.3333ZM31.1133 17.615C31.5466 17.1817 31.5466 16.51 31.1133 16.0767L27.2783 12.2417C26.845 11.8083 26.1733 11.8083 25.74 12.2417L13 24.9817V30.3333H18.3516L31.1133 17.615Z"
-                      fill="#6366F1"
-                    />
-                  </g>
-                </svg>
-
-                <p className="text-2xl leading-7 font-bold text-white ml-1.5 pt-2">
-                  Giao diện thân thiện
-                </p>
-              </div>
-              <p className="text-sm leading-5 font-medium text-black">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes{" "}
-              </p>
-            </div>
-            <div className="w-9/12 h-40 bg-indigo-300 rounded-2xl pt-2 px-3.5">
-              <div className="p-0 mb-2 flex justify-start">
-                <svg
-                  width="52"
-                  height="52"
-                  viewBox="0 0 52 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="ic:outline-rate-review">
-                    <path
-                      id="Vector"
-                      d="M43.3333 4.33333H8.66665C6.28331 4.33333 4.35498 6.28333 4.35498 8.66666L4.33331 47.6667L13 39H43.3333C45.7166 39 47.6666 37.05 47.6666 34.6667V8.66666C47.6666 6.28333 45.7166 4.33333 43.3333 4.33333ZM43.3333 34.6667H11.2016L9.92331 35.945L8.66665 37.2017V8.66666H43.3333V34.6667ZM22.75 30.3333H39V26H27.0833L22.75 30.3333ZM31.1133 17.615C31.5466 17.1817 31.5466 16.51 31.1133 16.0767L27.2783 12.2417C26.845 11.8083 26.1733 11.8083 25.74 12.2417L13 24.9817V30.3333H18.3516L31.1133 17.615Z"
-                      fill="#6366F1"
-                    />
-                  </g>
-                </svg>
-
-                <p className="text-2xl leading-7 font-bold text-white ml-1.5 pt-2">
-                  Giao diện thân thiện
-                </p>
-              </div>
-              <p className="text-sm leading-5 font-medium text-black">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
       <Footer />
     </React.Fragment>
   );

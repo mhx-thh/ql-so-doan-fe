@@ -1,7 +1,7 @@
 import { apiV1, get, post, put, delele } from "api/generic";
 import { BookModel, HistoryModel } from "lib/models";
 
-const userApi = {
+const bookApi = {
   getBookList: function () {
     const url = `${apiV1}/book`;
     return get(url, "");
@@ -9,6 +9,10 @@ const userApi = {
   newBook: function (data: BookModel) {
     const url = `${apiV1}/book`;
     return post(url, data, "");
+  },
+  postBook: function (data: any, token: string) {
+    const url = `${apiV1}/book`;
+    return post(url, data, token);
   },
   editBook: function (data: BookModel, id: string, token: string) {
     const url = `${apiV1}/book/${id}`;
@@ -23,4 +27,4 @@ const userApi = {
     return put(url, data, token);
   },
 };
-export default userApi;
+export default bookApi;
