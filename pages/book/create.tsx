@@ -2,27 +2,10 @@ import bookApi from "api/bookApi";
 import classApi from "api/classApi";
 import Footer from "components/footer/FooterComponent";
 import PopUp from "components/PopUp/popup";
-import { totalmem } from "os";
 import React, { FC, useEffect, useState } from "react";
 import { useAppSelector } from "redux/hooks";
 import { selectToken } from "redux/userSlice";
-import style from "../style.module.css";
 import Swal from "sweetalert2";
-const temp = [
-  "Name",
-  "DOB",
-  "Email",
-  "Class",
-  "IC",
-  "DJU",
-  "DJCP",
-  "PositionHSU",
-  "ClassOfficePosition",
-  "Talent",
-  "Phone",
-  "SID",
-  "NumberApproved",
-];
 type Api = {
   Name: string;
   Gender: string;

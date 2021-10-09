@@ -1,11 +1,4 @@
-import React from "react";
-
-type AppProps = {
-  time: string;
-};
-
-function ConvertTime(props: AppProps) {
-  const time = props.time.substr(0, 16);
+export function ConvertTime(time: string) {
   function DateOfMonth(month, year) {
     switch (month) {
       case 1:
@@ -58,11 +51,5 @@ function ConvertTime(props: AppProps) {
   day = day < 10 ? "0" + day : day;
   month = month < 10 ? "0" + month : month;
 
-  return (
-    <div>
-      {hour}:{minute}, {day}/{month}/{year}
-    </div>
-  );
+  return `${day}/${month}/${year}`;
 }
-
-export default ConvertTime;

@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React, { FC } from "react";
 import { useAppSelector } from "redux/hooks";
-import IconSearch from "./IconSearch";
-import Logo from "./Logo";
+import Logo from "components/Icons/Logo";
 import { selectStatus, selectUser } from "redux/userSlice";
 import { useRouter } from "next/router";
 
@@ -44,15 +43,15 @@ const HeaderComponent: FC = () => {
                 </div>
               </Link>
 
-              <Link href="#">
+              <Link href="/book">
                 <div
                   className={
                     "mr-6 flex items-center cursor-pointer px-1.5 py-1 hover:bg-indigo-100 rounded-lg" +
-                    (path.indexOf("/feature1") === 0 ? " bg-indigo-100" : "")
+                    (path.indexOf("/book") === 0 ? " bg-indigo-100" : "")
                   }
                 >
                   <p className="text-lg mr-1 leading-8 font-semibold">
-                    Chức năng 1
+                    Sổ đoàn
                   </p>
                 </div>
               </Link>
