@@ -215,7 +215,6 @@ export default function Classes() {
   // Function Class Click
   async function onAddOrEditDoneClassClick() {
     setOpenClass(false);
-    console.log(aClass);
     try {
       if (isClassEdit) {
         await editClass(aClass?._id, aClass);

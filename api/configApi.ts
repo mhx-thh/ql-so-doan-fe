@@ -1,5 +1,11 @@
-import { apiV1, get, put, post, delele, patch } from "api/generic";
-import { PlaceModel, FacultyModel, RequestModel, ClassModel } from "lib/models";
+import { apiV1, get, put, post, delele } from "api/generic";
+import {
+  PlaceModel,
+  FacultyModel,
+  RequestModel,
+  ClassModel,
+  HistoryModel,
+} from "lib/models";
 
 const userApi = {
   getPlaceList: function (token: string) {
@@ -60,6 +66,26 @@ const userApi = {
   },
   delRequest: function (id: string, token: string) {
     const url = `${apiV1}/request/${id}`;
+    return delele(url, token);
+  },
+  getHistoryList: function () {
+    const url = `${apiV1}/history`;
+    return get(url, "");
+  },
+  getHistoryWithId: function (id: string) {
+    const url = `${apiV1}/history/${id}`;
+    return get(url, "");
+  },
+  newHistory: function (data: HistoryModel, token: string) {
+    const url = `${apiV1}/history`;
+    return post(url, data, token);
+  },
+  editHistory: function (id: string, data: HistoryModel, token: string) {
+    const url = `${apiV1}/history/${id}`;
+    return put(url, data, token);
+  },
+  delHistory: function (id: string, token: string) {
+    const url = `${apiV1}/history/${id}`;
     return delele(url, token);
   },
 };

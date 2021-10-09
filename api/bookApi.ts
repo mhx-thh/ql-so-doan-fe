@@ -6,6 +6,10 @@ const bookApi = {
     const url = `${apiV1}/book`;
     return get(url, "");
   },
+  getBookListWithSID: function (id: string) {
+    const url = `${apiV1}/book/${id}`;
+    return get(url, "");
+  },
   newBook: function (data: BookModel) {
     const url = `${apiV1}/book`;
     return post(url, data, "");
