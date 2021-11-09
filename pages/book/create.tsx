@@ -309,32 +309,27 @@ const CreateBook: FC = (props) => {
     }
     console.log("after create", create);
   };
-  const errorClass = "w-full bg-white rounded border border-red-500 ";
-  const properClass = "w-full bg-white rounded border border-green-700 ";
-  const initClass = "w-full bg-white rounded border border-gray-300 ";
+  const errorClass = "w-full bg-white rounded border border-2 border-red-500 ";
+  const properClass =
+    "w-full bg-white rounded border border-2 border-green-300 ";
+  const initClass = "w-full bg-white rounded border border-2 border-gray-300 ";
   return (
     <>
       <section className="text-gray-600 body-font relative">
-        <div className="absolute inset-0 bg-gray-300">
-          <div className="pt-80">
-            <img
-              src="/picture/create.png"
-              alt="Picture"
-              width="600px"
-              height="1000px"
-            />
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-gray-300"></div>
         <div className="container px-5 py-24 mx-auto flex placeholder-black">
-          <form className="lg:w-1/2 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+          <form className="lg:w-full grid grid-cols-2 md:w-full bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md gap-x-10">
             {/* Tiêu đề */}
-            <p className="text-gray-900 text-lg mb-1 font-medium title-font">
-              Nhập thông tin của bạn
-            </p>
-            {/* chú thích */}
-            <p className="leading-relaxed mb-5 text-gray-600">
-              Vui lòng nhập đầy đủ thông tin.
-            </p>
+            <div>
+              <p className="text-gray-900 text-lg mb-1 font-medium title-font">
+                Nhập thông tin của bạn
+              </p>
+              {/* chú thích */}
+              <p className="leading-relaxed mb-5 text-gray-600">
+                Vui lòng nhập đầy đủ thông tin.
+              </p>
+            </div>
+            <div className="relative mb-4"></div>
             {/* Họ và tên */}
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
@@ -386,7 +381,7 @@ const CreateBook: FC = (props) => {
                 Số CMND/CCCD
               </label>
               <input
-                type="type"
+                type="text"
                 id="cmnd"
                 name="IC"
                 placeholder="364232444"
@@ -456,7 +451,7 @@ const CreateBook: FC = (props) => {
                   className="mr-3"
                   onClick={handleChangefemale}
                 />
-                <label htmlFor="female">Nu</label>
+                <label htmlFor="female">Nữ</label>
               </div>
             </div>
             {/* Ngày vào đoàn */}
@@ -689,26 +684,21 @@ const CreateBook: FC = (props) => {
                 Nếu không có năng khiếu nào, điền "Không có".
               </p>
             </div>
-            <input
-              type="submit"
-              value="Gửi"
-              name="Gui"
-              className="text-white transition-colors duration-700 transform bg-indigo-500 hover:bg-indigo-400 text-white h-10 rounded-lg focus:border-4 border-indigo-300 text-lg cursor-pointer"
-              onClick={handleSubmit}
-            />
-            <p className="text-xs text-gray-500 mt-3">
-              Vui lòng kiểm tra kỹ thông tin trước khi gửi xác nhận.
-            </p>
+            <div className="relative mb-4 w-full">
+              <input
+                type="submit"
+                value="Gửi"
+                name="Gui"
+                className="text-white w-full transition-colors duration-700 transform bg-indigo-500 hover:bg-indigo-400 text-white h-10 rounded-lg focus:border-4 border-indigo-300 text-lg cursor-pointer"
+                onClick={handleSubmit}
+              />
+              <p className="text-xs text-gray-500 mt-3">
+                Vui lòng kiểm tra kỹ thông tin trước khi gửi xác nhận.
+              </p>
+            </div>
           </form>
         </div>
       </section>
-      {/* 
-      {isloading === true && (
-        <PopUp closepopup={setIsloading}>
-          <button></button>
-        </PopUp>
-      )} */}
-
       <Footer />
     </>
   );
