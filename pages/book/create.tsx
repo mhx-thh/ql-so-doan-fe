@@ -309,382 +309,399 @@ const CreateBook: FC = (props) => {
     }
     console.log("after create", create);
   };
-  const errorClass = "w-full bg-white rounded border border-2 border-red-500 ";
+  const errorClass =
+    "w-full bg-white rounded border border-2 border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200 ";
   const properClass =
-    "w-full bg-white rounded border border-2 border-green-300 ";
-  const initClass = "w-full bg-white rounded border border-2 border-gray-300 ";
+    "w-full bg-white rounded border border-2 border-green-300 focus:border-green-300 focus:ring focus:ring-green-100 ";
+  const initClass =
+    "w-full bg-white rounded border border-2 border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 ";
   return (
     <>
       <section className="text-gray-600 body-font relative">
-        <div className="absolute inset-0 bg-gray-300"></div>
+        <span className="absolute inset-0 bg-indigo-50">
+          <p className="ml-50 mt-5 text-3xl text-indigo-600 font-sans text-center justify-items-center font-semibold">
+            Gửi thông tin sổ đoàn của bạn đến Đoàn Thanh niên trường ĐH KHTN
+          </p>
+        </span>
         <div className="container px-5 py-24 mx-auto flex placeholder-black">
-          <form className="lg:w-full grid grid-cols-2 md:w-full bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md gap-x-10">
-            {/* Tiêu đề */}
-            <div>
-              <p className="text-gray-900 text-lg mb-1 font-medium title-font">
-                Nhập thông tin của bạn
-              </p>
-              {/* chú thích */}
-              <p className="leading-relaxed mb-5 text-gray-600">
-                Vui lòng nhập đầy đủ thông tin.
-              </p>
-            </div>
-            <div className="relative mb-4"></div>
-            {/* Họ và tên */}
-            <div className="relative mb-4">
-              <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-                Họ và tên
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="Name"
-                className={
-                  Namestatus === 2
-                    ? properClass
-                    : Namestatus === 0 || Namestatus === 1
-                    ? errorClass
-                    : initClass +
-                      "  focus:border-indigo-500 placeholder-italic placeholder-gray-300 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
-                }
-                placeholder="Nguyen Van A"
-                pattern="[a-z]{1,15}"
-                onChange={handleChangeName}
-                required
-              />
-            </div>
-            {/* MSSV */}
-            <div className="relative mb-4">
-              <label htmlFor="mssv" className="leading-7 text-sm text-gray-600">
-                MSSV
-              </label>
-              <input
-                type="text"
-                id="mssv"
-                name="SID"
-                onChange={handleChangeSID}
-                required
-                placeholder="20112022"
-                className={
-                  SIDstatus === 2
-                    ? properClass
-                    : SIDstatus === 1 || SIDstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic placeholder-gray-300 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* CMND */}
-            <div className="relative mb-4">
-              <label htmlFor="cmnd" className="leading-7 text-sm text-gray-600">
-                Số CMND/CCCD
-              </label>
-              <input
-                type="text"
-                id="cmnd"
-                name="IC"
-                placeholder="364232444"
-                onChange={handleChangeIC}
-                required
-                className={
-                  ICstatus === 2
-                    ? properClass
-                    : ICstatus === 1 || ICstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic placeholder-gray-300 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* Ngày sinh */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="birthday"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Ngày sinh
-              </label>
-              <input
-                type="date"
-                id="birthday"
-                name="DOB"
-                onChange={handleChangeDOB}
-                min="20/01/2000"
-                max="20/01/2020"
-                required
-                className={
-                  DOBstatus === 2
-                    ? properClass
-                    : DOBstatus === 1 || DOBstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic focus:ring-2 placeholder-gray-300 focus:ring-indigo-200 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* Giới tính */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="gender"
-                className="leading-7 text-sm text-gray-600 mr-12"
-              >
-                Giới tính:
-              </label>
-              <div className="pl-20">
-                <input
-                  type="radio"
-                  id="male"
-                  name="gender"
-                  value="male"
-                  className="mr-3"
-                  onClick={handleChangemale}
-                />
-                <label htmlFor="male" className="mr-40">
-                  Nam
+          <div className="lg:w-full md:w-full bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md gap-x-10">
+            <form className="lg:w-full grid lg:grid-cols-2 md:grid-cols-2 md:w-full bg-white p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 gap-x-10">
+              {/* Tiêu đề */}
+              <div>
+                <p className="text-gray-900 text-lg mb-1 font-medium title-font">
+                  Nhập thông tin của bạn
+                </p>
+                {/* chú thích */}
+                <p className="leading-relaxed mb-5 text-gray-600">
+                  Vui lòng nhập đầy đủ thông tin.
+                </p>
+              </div>
+              <div className="relative mb-4"></div>
+              {/* Họ và tên */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Họ và tên
                 </label>
                 <input
-                  type="radio"
-                  id="female"
-                  name="gender"
-                  value="female"
-                  className="mr-3"
-                  onClick={handleChangefemale}
+                  type="text"
+                  id="name"
+                  name="Name"
+                  className={
+                    Namestatus === 2
+                      ? properClass
+                      : Namestatus === 0 || Namestatus === 1
+                      ? errorClass
+                      : initClass +
+                        " placeholder-italic placeholder-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
+                  }
+                  placeholder="Nguyen Van A"
+                  pattern="[a-z]{1,15}"
+                  onChange={handleChangeName}
+                  required
                 />
-                <label htmlFor="female">Nữ</label>
               </div>
-            </div>
-            {/* Ngày vào đoàn */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="uniondate"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Ngày vào Đoàn
-              </label>
-              <input
-                type="date"
-                id="uniondate"
-                name="DJU"
-                onChange={handleChangeDJU}
-                required
-                className={
-                  DJUstatus === 2
-                    ? properClass
-                    : DJUstatus === 1 || DJUstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic placeholder-gray-300 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* nghị quyết số */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="uniondate"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Nghị quyết số
-              </label>
-              <input
-                type="text"
-                id="NumberApproved"
-                name="NumberApproved"
-                onChange={handleChangeNumberApproved}
-                required
-                className={
-                  NumberApprovedstatus === 2
-                    ? properClass
-                    : NumberApprovedstatus === 1 || NumberApprovedstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic placeholder-gray-300 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* Ngày vào đảng */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="partydate"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Ngày vào Đảng
-              </label>
-              <input
-                type="date"
-                id="partydate"
-                name="DJCP"
-                onChange={handleChangeDJCP}
-                className={
-                  DJCPstatus === 2
-                    ? properClass
-                    : DJCPstatus === 1 || DJCPstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* Chi đoàn */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="youthunion"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Chi đoàn
-              </label>
-              <input
-                type="text"
-                id="youthunion"
-                name="Class"
-                onChange={handleChangeClass}
-                required
-                className={
-                  Classstatus === 2
-                    ? properClass
-                    : Classstatus === 1 || Classstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " placeholder-italic placeholder-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-                placeholder="20CTT2"
-              />
-            </div>
-            {/* Chức vụ đoàn cấp 3 */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="unionoffice"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Chức vụ đoàn cấp 3
-              </label>
-              <input
-                type="text"
-                id="unionoffice"
-                name="PositionHSU"
-                placeholder="Bí thư"
-                onChange={handleChangePositionHSU}
-                required
-                className={
-                  PositionHSUstatus === 2
-                    ? properClass
-                    : PositionHSUstatus === 1 || PositionHSUstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " placeholder-italic placeholder-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-              <p className="text-xs leading-none font-normal w-96 tracking-normal pt-2 px-2">
-                Nếu không có chức vụ nào, điền "Không có".
-              </p>
-            </div>
-            {/* Chức vụ trong lớp */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="classoffice"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Chức vụ trong lớp cấp 3
-              </label>
-              <input
-                type="text"
-                id="classoffice"
-                name="ClassOfficePosition"
-                placeholder="Lớp trưởng"
-                onChange={handleChangeClassOfficePosition}
-                required
-                className={
-                  ClassOfficePositionstatus === 2
-                    ? properClass
-                    : ClassOfficePositionstatus === 1 ||
-                      ClassOfficePositionstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " placeholder-italic border placeholder-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-              <p className="text-xs leading-none font-normal w-96 tracking-normal pt-2 px-2">
-                Nếu không có chức vụ nào, điền "Không có".
-              </p>
-            </div>
-            {/* Email */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="email"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="Email"
-                onChange={handleChangeEmail}
-                required
-                placeholder="example@gmail.com"
-                className={
-                  Emailstatus === 2
-                    ? properClass
-                    : Emailstatus === 1 || Emailstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " form-control border placeholder-italic placeholder-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* SĐT */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="phone"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Số điện thoại
-              </label>
-              <input
-                type="text"
-                id="phone"
-                name="Phone"
-                onChange={handleChangePhone}
-                required
-                className={
-                  Phonestatus === 2
-                    ? properClass
-                    : Phonestatus === 1 || Phonestatus === 0
-                    ? errorClass
-                    : initClass +
-                      " focus:border-indigo-500 placeholder-italic focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-            </div>
-            {/* Năng khiếu */}
-            <div className="relative mb-4">
-              <label
-                htmlFor="aptitude"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Năng khiếu
-              </label>
-              <input
-                type="text"
-                id="aptitude"
-                name="Talent"
-                placeholder="Ca hát, vẽ,..."
-                onChange={handleChangeTalent}
-                required
-                className={
-                  Talentstatus === 2
-                    ? properClass
-                    : Talentstatus === 1 || Talentstatus === 0
-                    ? errorClass
-                    : initClass +
-                      " placeholder-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                }
-              />
-              <p className="text-xs leading-none font-normal w-96 tracking-normal pt-2 px-2">
-                Nếu không có năng khiếu nào, điền "Không có".
-              </p>
-            </div>
-            <div className="relative mb-4 w-full">
+              {/* MSSV */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="mssv"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  MSSV
+                </label>
+                <input
+                  type="text"
+                  id="mssv"
+                  name="SID"
+                  onChange={handleChangeSID}
+                  required
+                  placeholder="20112022"
+                  className={
+                    SIDstatus === 2
+                      ? properClass
+                      : SIDstatus === 1 || SIDstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " placeholder-italic placeholder-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* CMND */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="cmnd"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Số CMND/CCCD
+                </label>
+                <input
+                  type="text"
+                  id="cmnd"
+                  name="IC"
+                  placeholder="364232444"
+                  onChange={handleChangeIC}
+                  required
+                  className={
+                    ICstatus === 2
+                      ? properClass
+                      : ICstatus === 1 || ICstatus === 0
+                      ? errorClass
+                      : initClass +
+                        "  placeholder-italic placeholder-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* Ngày sinh */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="birthday"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Ngày sinh
+                </label>
+                <input
+                  type="date"
+                  id="birthday"
+                  name="DOB"
+                  onChange={handleChangeDOB}
+                  min="20/01/2000"
+                  max="20/01/2020"
+                  required
+                  className={
+                    DOBstatus === 2
+                      ? properClass
+                      : DOBstatus === 1 || DOBstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " placeholder-italic placeholder-gray-300  outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* Giới tính */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="gender"
+                  className="leading-7 text-sm text-gray-600 mr-12"
+                >
+                  Giới tính:
+                </label>
+                <div className="">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    className="mr-3"
+                    onClick={handleChangemale}
+                  />
+                  <label htmlFor="male" className="mr-20">
+                    Nam
+                  </label>
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    className="mr-3"
+                    onClick={handleChangefemale}
+                  />
+                  <label htmlFor="female">Nữ</label>
+                </div>
+              </div>
+              {/* Ngày vào đoàn */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="uniondate"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Ngày vào Đoàn
+                </label>
+                <input
+                  type="date"
+                  id="uniondate"
+                  name="DJU"
+                  onChange={handleChangeDJU}
+                  required
+                  className={
+                    DJUstatus === 2
+                      ? properClass
+                      : DJUstatus === 1 || DJUstatus === 0
+                      ? errorClass
+                      : initClass +
+                        "  placeholder-italic placeholder-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* nghị quyết số */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="uniondate"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Nghị quyết số
+                </label>
+                <input
+                  type="text"
+                  id="NumberApproved"
+                  name="NumberApproved"
+                  onChange={handleChangeNumberApproved}
+                  required
+                  className={
+                    NumberApprovedstatus === 2
+                      ? properClass
+                      : NumberApprovedstatus === 1 || NumberApprovedstatus === 0
+                      ? errorClass
+                      : initClass +
+                        "  placeholder-italic placeholder-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* Ngày vào đảng */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="partydate"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Ngày vào Đảng
+                </label>
+                <input
+                  type="date"
+                  id="partydate"
+                  name="DJCP"
+                  onChange={handleChangeDJCP}
+                  className={
+                    DJCPstatus === 2
+                      ? properClass
+                      : DJCPstatus === 1 || DJCPstatus === 0
+                      ? errorClass
+                      : initClass +
+                        "  placeholder-italic text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* Chi đoàn */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="youthunion"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Chi đoàn
+                </label>
+                <input
+                  type="text"
+                  id="youthunion"
+                  name="Class"
+                  onChange={handleChangeClass}
+                  required
+                  className={
+                    Classstatus === 2
+                      ? properClass
+                      : Classstatus === 1 || Classstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " placeholder-italic placeholder-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                  placeholder="20CTT2"
+                />
+              </div>
+              {/* Chức vụ đoàn cấp 3 */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="unionoffice"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Chức vụ đoàn cấp 3
+                </label>
+                <input
+                  type="text"
+                  id="unionoffice"
+                  name="PositionHSU"
+                  placeholder="Bí thư"
+                  onChange={handleChangePositionHSU}
+                  required
+                  className={
+                    PositionHSUstatus === 2
+                      ? properClass
+                      : PositionHSUstatus === 1 || PositionHSUstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " placeholder-italic placeholder-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+                <p className="text-xs leading-none font-normal w-96 tracking-normal pt-2 px-2">
+                  Nếu không có chức vụ nào, điền "Không có".
+                </p>
+              </div>
+              {/* Chức vụ trong lớp */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="classoffice"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Chức vụ trong lớp cấp 3
+                </label>
+                <input
+                  type="text"
+                  id="classoffice"
+                  name="ClassOfficePosition"
+                  placeholder="Lớp trưởng"
+                  onChange={handleChangeClassOfficePosition}
+                  required
+                  className={
+                    ClassOfficePositionstatus === 2
+                      ? properClass
+                      : ClassOfficePositionstatus === 1 ||
+                        ClassOfficePositionstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " placeholder-italic border placeholder-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+                <p className="text-xs leading-none font-normal w-96 tracking-normal pt-2 px-2">
+                  Nếu không có chức vụ nào, điền "Không có".
+                </p>
+              </div>
+              {/* Email */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="email"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="Email"
+                  onChange={handleChangeEmail}
+                  required
+                  placeholder="example@gmail.com"
+                  className={
+                    Emailstatus === 2
+                      ? properClass
+                      : Emailstatus === 1 || Emailstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " form-control border placeholder-italic placeholder-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* SĐT */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="phone"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Số điện thoại
+                </label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="Phone"
+                  onChange={handleChangePhone}
+                  required
+                  className={
+                    Phonestatus === 2
+                      ? properClass
+                      : Phonestatus === 1 || Phonestatus === 0
+                      ? errorClass
+                      : initClass +
+                        "  placeholder-italic placeholder-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+              </div>
+              {/* Năng khiếu */}
+              <div className="relative mb-4">
+                <label
+                  htmlFor="aptitude"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Năng khiếu
+                </label>
+                <input
+                  type="text"
+                  id="aptitude"
+                  name="Talent"
+                  placeholder="Ca hát, vẽ,..."
+                  onChange={handleChangeTalent}
+                  required
+                  className={
+                    Talentstatus === 2
+                      ? properClass
+                      : Talentstatus === 1 || Talentstatus === 0
+                      ? errorClass
+                      : initClass +
+                        " placeholder-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  }
+                />
+                <p className="text-xs leading-none font-normal w-96 tracking-normal pt-2 px-2">
+                  Nếu không có năng khiếu nào, điền "Không có".
+                </p>
+              </div>
+            </form>
+            <div className="relative mb-4 w-full px-8">
               <input
                 type="submit"
                 value="Gửi"
@@ -696,7 +713,7 @@ const CreateBook: FC = (props) => {
                 Vui lòng kiểm tra kỹ thông tin trước khi gửi xác nhận.
               </p>
             </div>
-          </form>
+          </div>
         </div>
       </section>
       <Footer />
